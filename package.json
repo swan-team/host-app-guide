@@ -1,0 +1,22 @@
+{
+  "name": "host-app-guide",
+  "version": "1.0.0",
+  "description": "百度小程序开源宿主接入规范文档",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "sh tools/deploy-docs.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swan-team/host-app-guide.git"
+  },
+  "author": "houyu01,wenlixiu,sunweinan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/swan-team/host-app-guide/issues"
+  },
+  "homepage": "https://github.com/swan-team/host-app-guide#readme",
+  "dependencies": {
+    "gitbook-cli": "^2.3.2"
+  }
+}
