@@ -1,0 +1,285 @@
+# 初步
+接入小程序swan-native后，前端swan.js是集成在swan-native中的，swan-native接入的APP（以下简称“宿主”）默认无需关心swan-native上swan.js的更新/运行，但是宿主需要扩展swan对于小程序开发者的API/组件时，则需要为js运行时编写特定逻辑。
+
+# 扩展
+## 扩展都能做什么
+目前编写扩展，可以给宿主带来三种能力：
+
+1. 扩展运行在当前宿主上的端能力调用、或固定功能的封装，作为swan的API，提供给运行在该宿主上的小程序开发者使用。如：`swan.tieba.publishThread()`。
+
+2. 扩展运行时在当前宿主上的组件，运行在该宿主上的小程序开发者，可以在小程序运行在该宿主时，使用特定的组件，如：`<bilibili-video></bilibili-video>`。
+
+3. 自定义该宿主环境下的分享页面的配置。
+
+4. 扩展该宿主环境下的统计逻辑，使宿主可以使用自己的统计功能。
+
+##扩展的内部下载机制
+参考 [扩展-下发与加载机制](./下发与加载机制.md)
+## 扩展包的结构
+
+### extension包目录结构
+extension.zip
+
+ ---- extension.js // 其中包含宿主扩展的API、端能力、组件、分享和统计逻辑。
+ 
+ ---- extension.css // 运行在slave的视图层，是为宿主提供独立的扩展样式表。
+	
+### extension包demo
+swan-extension-demo：
+[链接](./swan-extension-demo)
+
+## 扩展功能的编写
+
+### API的扩展
+
+使用场景：
+
+【为宿主侧的小程序开发者使用】
+
+作用：
+
+宿主可以封装一系列的功能方法，扩展到swan上的API，给宿主上的小程序的开发者使用。
+
+介绍：
+
+在extension.js中，`methods`对象中的所有字段，会在框架运行时自动被merge到`swan`中，以宿主名为命名空间（extension.js中的name字段）为集合，提供给宿主的第三方小程序开发者，如：
+
+```javascript { .theme-peacock }
+swan.tieba.testAPI();
+```
+在methods中的方法里，可以使用 extension.js 中 `hostMethodDescriptions` 字段注册的宿主端能力，也可以是单纯的一段功能的封装。如：
+
+```javascript { .theme-peacock }
+// 扩展API
+methods: {
+    testAPI:function(){
+        boxjs.publishThread({
+            data:{
+                title:'1234'
+            }
+        });
+        console.log('Extension API Used');
+    }
+}
+```
+
+
+### 宿主端能力的扩展
+使用场景：
+
+【为宿主的 extension 开发者使用】
+
+作用：
+
+将固定的端能力使用封装到API中，以提供给宿主的小程序开发者使用。
+
+原理介绍：
+
+> swan.js的端能力调用，使用了开源的 [js-native](https://github.com/ecomfe/js-native) 来实现。
+> 
+> 在swan.js的运行时中，会自动将swan-native提供的端能力 descriptions 使用jsNative.add()注册到container中，再将对应端能力的invoke方法挂载在boxjs上使用。
+> 
+> 若宿主端自行实现了某些端能力，则需要把端能力的 descriptions 扩展到extension包中，swanjs运行时加载extension包时，会将这些descriptions再次add到jsNative的container中。同时再把对应的invoke方法按照name挂载到boxjs上。使用时，只需要使用boxjs.name()即可调用宿主的端能力。
+
+在 extension.js 中，`hostMethodDescriptions` 数组中的每一项，会在框架运行时以特定方式注册到`boxjs`中，成为boxjs的一个新方法。使用boxjs的这个方法，即可调用相对应的端能力。
+
+基础格式举例：
+
+```javascript { .theme-peacock }
+hostMethodDescriptions: [{
+    name: 'publishThread',
+    authority: 'v26/swan',
+    path: 'publishThread'
+}],
+```
+
+extension开发API时的使用方式如：
+
+```javascript { .theme-peacock }
+boxjs.publishThread({
+     data:{
+         title:'1234'
+     }
+ });
+```
+
+其中，`/v26/`均是协议体，无需更改，最后的`swan/publishThread`反射给三方的类的`ACTION_TYPE`，客户端代码参考：
+
+```javascript { .theme-peacock }
+public class AiAppExtendSchemeDemo extends AiAppAction {
+    // 协议中的action_type，客户端与前端进行沟通
+	private static final String ACTION_TYPE = "/swan/publishThread";
+	// ...
+	@Override
+	public boolean handle(Context context, UnitedSchemeEntity entity, CallbackHandler handler, AiApp aiapp) {
+        // 客户端的扩展端能力部分逻辑
+	}
+}
+```
+协议中的`params`会被解析为`entity`传递给宿主客户端。
+
+
+### 宿主组件的扩展
+
+使用场景：
+
+【为宿主侧的小程序开发者使用】
+
+作用：
+
+宿主可以封装一些固定的组件，扩展到extension包中，作为正常的组件提供给宿主的小程序开发者使用。
+
+原理：
+
+> swan.js提供的组件与视图渲染，基于了开源的 [San框架](https://baidu.github.io/san/tutorial/start/) 来开发。
+> 
+> 在swan.js的运行时中，会自动将 extension.js 中的 components 与 swan.js 本身提供的components 合并，一起注册到组件工厂中，提供给小程序开发者使用。
+> 
+
+介绍：
+
+在 extension.js 中，`components`对象中的所有字段，将会自动生成对应的组件，并注册以“宿主名-组件名”的组件信息。
+
+基础格式举例：
+
+```javascript { .theme-peacock }
+components:[
+{
+    'video': {
+        behaviors: ['userTouchEvents', 'animateEffect'],
+        template: '<div class="baidu-video">{{content}}<slot></slot></div>',
+        depandencies: ['swaninterface'],
+        initData() {
+            return {
+                content: 'Extension Content New！！'
+            }
+        },
+        attached() {
+            console.log('Extension Component Attached');
+            swan.baidu.testAPI();
+        }
+    }
+}
+]
+
+```
+
+宿主小程序开发者的使用方式：
+
+`<tieba-video>xxx</tieba-video>`。
+此处的 “tieba” 为 extension.js 中的 name 属性。
+
+具体内部详细的组件定义、描述、生命周期等信息，请参考：[San官网](https://baidu.github.io/san/tutorial/start/)
+
+### 宿主自定义分享
+
+**使用场景**：
+
+【为宿主扩展使用】
+
+**作用**：
+
+宿主可以自定义分享的相关配置，如链接、头像等。
+
+**介绍**：
+
+在 extension.js 中，`getShareURL`的返回值中，宿主可以填写自己的分享配置。
+宿主的 extension.js 中有此配置项，则使用 extension 中的拼接，如果 extension 中没有此配置项，则分享到百度的中转 H5 地址。
+
+```javascript { .theme-peacock }
+getShareURL: function ({appId, scene, target, title, content, path, imageUrl}) {
+    return {
+        shareUrl: 'http://www.qq.com',
+        imageUrl: imageUrl || 'https://www.baidu.com/img/bd_logo1.png?qua=high&where=super'
+    }
+}
+```
+
+### 宿主扩展统计逻辑
+
+**使用场景**：
+
+【为宿主扩展使用】
+
+**作用**：
+
+宿主可以监听各个流程中的打点统计事件，以用于执行收集PV、UV等种种功能的统计方法。
+
+**介绍**：
+
+框架运行时的内部在各个关键节点都派发了事件，宿主开发者可以在 extension.js 中的 `customLog` 方法中使用其参数的`swanEventFlow`对象来监听这些事件，编写自己的统计逻辑。
+具体的事件列表参考 [扩展-统计事件list](./统计事件list.md)
+
+**文件的基础格式**：
+
+```javascript { .theme-peacock }
+customLog(swanEventFlow) {
+    // 监听page生命周期函数
+    swanEventFlow.onMessage('PagelifeCycle', event => {
+        if (event.params.eventName === 'onReady') {
+            console.log(event.params)
+        }
+    });
+    // 监听app生命周期函数
+    swanEventFlow.onMessage('ApplifeCycle', event => {
+        if (event.params.eventName === 'onShow') {
+            console.log(event.params)
+        }
+    });
+    // 监听框架流程事件
+    swanEventFlow.onMessage('TraceEvents', event => {
+        // 宿主打印日志的逻辑
+        if(event.params.eventName === 'masterActiveCreatePageFlowStart'){
+            console.log(event.params)
+        }
+    });
+}
+
+```
+
+### 宿主扩展样式
+
+**作用**：
+
+给宿主提供的扩展样式表，可以增加全局样式，也可为宿主定义的组件编写样式。
+
+在 extension.css 中，可以为宿主上运行的小程序添加全局样式：
+
+```javascript { .theme-peacock }
+.body{
+	backgroud:#ff0
+}
+```
+
+在 extension.js 中的 components 的 template 编写时，宿主可以为组件挂载一些自定义的类名，如 “baidu-video”。
+
+则在 extension.css 中，也可以为宿主定义的组件编写样式。
+
+```javascript { .theme-peacock }
+.baidu-video {
+	backgroud:#ff0
+}
+```
+
+### 给 extension 中提供的接口
+在 extension.js 中，可能需要与宿主客户端进行交互，所以提供一些开发者所没有的特定接口，编写extension.js 的开发人员可以使用这些API，编写特定的逻辑。
+其中，extension中，为宿主开发者传入boxjs和swan 为提供扩展API和集合对象使用。
+
+| API | 描述 |
+|:------------- |:---------------|
+| boxjs | 小程序开发者无法访问的私有能力的接口集合 |
+| swan | 为小程序开发者提供的全局的swan对象(对应的API列表，可以在官网上找到) |
+
+基本使用方式：
+
+在定义 extension.js 时，注明使用的API，并在回调函数中接收。
+
+```javascript { .theme-peacock }
+define('swan-extension', [
+	'swan',
+	'boxjs'
+], function (require, module, exports, define, swan, boxjs) {
+	// 扩展的代码
+});
+
+```
