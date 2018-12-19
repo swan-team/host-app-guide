@@ -29,9 +29,9 @@ Pyramid.bba_MNPWebViewNavigation
 ```
 * 2、调用方法
 
- ```
+```
  [Pyramid.bba_MNPWebViewNavigation resetWebViewOffsetYZero:self.webView];
- ```
+```
 * 3、方法列表
 
 ```
