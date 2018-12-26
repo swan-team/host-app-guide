@@ -1,0 +1,6 @@
+{
+    "title": "我的标题",
+    "root": "./source",
+    "plugins": ["sequence"]
+    
+}
