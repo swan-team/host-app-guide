@@ -1,12 +1,12 @@
 <!-- TOC -->
 
-- [1. BBAMNPServiceProtocol](#1-bbamnpserviceprotocol)
+- [1. SWANServiceProtocol](#1-SWANserviceprotocol)
     - [1.1. 文档版本](#11-文档版本)
     - [1.2. 功能说明](#12-功能说明)
     - [1.3. 开发指南](#13-开发指南)
 
 <!-- /TOC -->
-# 1. BBAMNPServiceProtocol
+# 1. SWANServiceProtocol
 ## 1.1. 文档版本
 
 |文档版本|修改日期|修改概述|
@@ -68,7 +68,7 @@
 + (BOOL)isLaunchMNP:(NSString *)scheme;
 
 /// 预加载swancore接口
-+ (void)preloadSwanCore:(BBAMNPSCPreloadScene)scene;
++ (void)preloadSwanCore:(SWANSCPreloadScene)scene;
 
 /// 小程序功能是否可用 支持最低版本的系统为iOS9
 + (BOOL)enableMNP;

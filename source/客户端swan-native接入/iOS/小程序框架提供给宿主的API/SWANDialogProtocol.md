@@ -1,12 +1,12 @@
 <!-- TOC -->
 
-- [1. BBAMNPDialogProtocol](#1-bbamnpdialogprotocol)
+- [1. SWANDialogProtocol](#1-SWANdialogprotocol)
     - [1.1. 文档版本](#11-文档版本)
     - [1.2. 功能说明](#12-功能说明)
     - [1.3. 开发指南](#13-开发指南)
 
 <!-- /TOC -->
-# 1. BBAMNPDialogProtocol
+# 1. SWANDialogProtocol
 ## 1.1. 文档版本
 
 |文档版本|修改日期|修改概述|
@@ -36,7 +36,7 @@
                                 contentInfo:content
                                contentColor:nil
                                 buttonItems:buttonItems
-                                      appID:command.userInfo[kBBAMNPDispatcherUserInfoAPPIDKey]];
+                                      appID:command.userInfo[kSWANDispatcherUserInfoAPPIDKey]];
 ```
 * 3、方法列表
   

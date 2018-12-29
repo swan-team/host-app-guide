@@ -36,7 +36,7 @@
 
 ### 2. 注册并创建宿主
 
-前期采用线下邀请制的方式，发送至邮箱： smartprogram_bd@baidu.com，即可完成在开源联盟平台的注册和创建。
+前期采用线下邀请制的方式，发送至邮箱： smartprogram_union@baidu.com ，即可完成在开源联盟平台的注册和创建。
 
 邮件模板：
 
@@ -67,7 +67,7 @@
  
 	> 客户端第三方依赖库 [IOS](客户端swan-native接入/iOS/第三方依赖库说明.md)、[Android](客户端swan-native接入/Android/第三方依赖库说明.md)  
 
- - 其他 (此处需联系百度方支持 yangbo21@baidu.com)：
+ - 其他 (此处需联系百度方支持 smartprogram_union@baidu.com )：
 
 	 * 开通二维码访问时server中转白名单；
 	 * 申请from（打开小程序的场景值）；

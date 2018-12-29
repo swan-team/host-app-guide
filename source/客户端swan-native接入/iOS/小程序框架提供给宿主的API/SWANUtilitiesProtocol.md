@@ -1,12 +1,12 @@
 <!-- TOC -->
 
-- [1. BBAMNPUtilitiesProtocol](#1-bbamnputilitiesprotocol)
+- [1. SWANUtilitiesProtocol](#1-SWANutilitiesprotocol)
     - [1.1. 文档版本](#11-文档版本)
     - [1.2. 功能说明](#12-功能说明)
     - [1.3. 开发指南](#13-开发指南)
 
 <!-- /TOC -->
-# 1. BBAMNPUtilitiesProtocol
+# 1. SWANUtilitiesProtocol
 ## 1.1. 文档版本
 
 |文档版本|修改日期|修改概述|
@@ -35,7 +35,7 @@ Pyramid.bba_MNPUtilities
 * 3、方法列表
 
 ```
-  +(UIViewController<BBAMNPSlaveWebViewControllerProtocol,BBAMNPSlaveWebViewControllerUIProtocol> *)getSlaveWebVCById:(NSString *)slaveId
+  +(UIViewController<SWANSlaveWebViewControllerProtocol,SWANSlaveWebViewControllerUIProtocol> *)getSlaveWebVCById:(NSString *)slaveId
                                  appId:(NSString *)appId;
 ///获取appid
 + (NSString *)currentAppID:(BBASchemeDispatcher *)dispatcher;
@@ -55,9 +55,9 @@ Pyramid.bba_MNPUtilities
 ///获取appKey
 + (NSString *)currentAppKey:(BBASchemeDispatcher *)dispatcher;
 
-+ (id<BBAMNPMessageItemProtocol>)getMessageItemByAppId:(NSString *)appId
++ (id<SWANMessageItemProtocol>)getMessageItemByAppId:(NSString *)appId
                                                 castId:(NSString *)castId;
-+ (void)addMessageItem:(id<BBAMNPMessageItemProtocol>)item
++ (void)addMessageItem:(id<SWANMessageItemProtocol>)item
                 castId:(NSString *)castId
                  appId:(NSString *)appId;
 

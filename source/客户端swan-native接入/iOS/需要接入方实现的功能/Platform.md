@@ -4,7 +4,7 @@
     - [1.1. 文档版本](#11-文档版本)
     - [1.2. 功能说明](#12-功能说明)
     - [1.3. 开发指南](#13-开发指南)
-        - [1.3.1. 实现BBAMNPPlatformProtocol接口](#131-实现bbamnpplatformprotocol接口)
+        - [1.3.1. 实现SWANPlatformProtocol接口](#131-实现SWANplatformprotocol接口)
             - [1.3.1.1. 接口方法列表](#1311-接口方法列表)
             - [1.3.1.2. 示例](#1312-示例)
 
@@ -20,7 +20,7 @@
 ## 1.2. 功能说明
 配置小程序框架运行环境的参数
 ## 1.3. 开发指南
-### 1.3.1. 实现BBAMNPPlatformProtocol接口
+### 1.3.1. 实现SWANPlatformProtocol接口
 #### 1.3.1.1. 接口方法列表
 
 * 宿主版本CFBundleVersion
@@ -173,8 +173,8 @@
 ```
 #### 1.3.1.2. 示例
 ```
-#define BBAMNPSDKVersion @"1.7"
-#define BBAMNPAppName @"baiduboxapp"
+#define SWANSDKVersion @"1.7"
+#define SWANAppName @"baiduboxapp"
 
 /**
  * 小程序包加密公钥key
@@ -187,11 +187,11 @@ static NSString * const kExtensionRule = @"~1.0.0";
 }
 
 + (NSString *)hostName {
-    return BBAMNPAppName;
+    return SWANAppName;
 }
 
 + (NSString *)schemeName {
-    return BBAMNPAppName;
+    return SWANAppName;
 }
 
 + (NSString *)globalFontSizeLevel {
@@ -231,7 +231,7 @@ static NSString * const kExtensionRule = @"~1.0.0";
 }
 
 + (NSString *)presetSwanExtensionPackageBundlePath {
-    NSString *extensionPath = [[NSBundle mainBundle] pathForResource:@"BBAMNPPyramid.bundle" ofType:nil];
+    NSString *extensionPath = [[NSBundle mainBundle] pathForResource:@"SWANPyramid.bundle" ofType:nil];
     NSString *extensionPackagePath = [NSString stringWithFormat:@"%@/swan-core-extension.zip", extensionPath];
     if (!extensionPath) {
         return nil;
@@ -240,7 +240,7 @@ static NSString * const kExtensionRule = @"~1.0.0";
 }
 
 + (NSString *)presetSwanExtensionPackageVersion {
-    NSString *extensionPath = [[NSBundle mainBundle] pathForResource:@"BBAMNPPyramid.bundle" ofType:nil];
+    NSString *extensionPath = [[NSBundle mainBundle] pathForResource:@"SWANPyramid.bundle" ofType:nil];
     NSString *extensionConfigPath = [NSString stringWithFormat:@"%@/swan-extension-config.json", extensionPath];
     if (!extensionPath || !extensionConfigPath) {
         return nil;

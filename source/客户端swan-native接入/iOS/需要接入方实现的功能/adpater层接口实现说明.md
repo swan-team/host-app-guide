@@ -19,7 +19,7 @@
 
 --------------------------
 ## 1.2. 功能说明
-本文档介绍如何实现BBAMNP工程需要宿主实现的接口
+本文档介绍如何实现SWAN工程需要宿主实现的接口
 
 ## 1.3. 开发指南
 ### 1.3.1. 需要实现的接口列表
@@ -27,76 +27,76 @@
 > 宿主接入了相关功能的小程序，必须实现的接口
 
 * ├── [Account](登录.md)
-* │   └── `BBAMNPAccountProtocol.h`
+* │   └── `SWANAccountProtocol.h`
 * ├── [Authorize](授权.md)
-* │   └── `BBAMNPAuthorizeReqestProtocol.h`
+* │   └── `SWANAuthorizeReqestProtocol.h`
 * ├── [Camera](拍照.md)
-* │   └── `BBAMNPCameraProtocol.h`
+* │   └── `SWANCameraProtocol.h`
 * ├── [Platform](Platform.md)
-* │   └── `BBAMNPPlatformProtocol.h`
+* │   └── `SWANPlatformProtocol.h`
 * ├── [Invoice](地址、发票.md)
-* │   └── `BBAMNPInvoiceProtocol.h`
+* │   └── `SWANInvoiceProtocol.h`
 * ├── [Live](直播.md)
-* │   └── `BBAMNPLiveProtocol.h`
+* │   └── `SWANLiveProtocol.h`
 * ├── [Location](定位.md)
-* │   └── `BBAMNPLocationProtocol.h`
+* │   └── `SWANLocationProtocol.h`
 * ├── [Map](地图.md)
-* │   ├── `BBAMNPMapLocationProtocol.h`
-* │   ├── `BBAMNPMapProtocol.h`
-* │   ├── `BBAMNPMapSearchProtocol.h`
+* │   ├── `SWANMapLocationProtocol.h`
+* │   ├── `SWANMapProtocol.h`
+* │   ├── `SWANMapSearchProtocol.h`
 * │   ├── `BBAMapKitPoiInfoProtocol.h`
 * ├── [Payment](支付.md)
-* │   └── `BBAMNPPaymentProtocol.h`
+* │   └── `SWANPaymentProtocol.h`
 * ├── [Photo](图片.md)
-* │   └── `BBAMNPPhotoProtocol.h`
+* │   └── `SWANPhotoProtocol.h`
 * ├── [ScanCode](二维码扫描.md)
-* │   └── `BBAMNPScanCodeProtocol.h`
+* │   └── `SWANScanCodeProtocol.h`
 * ├── [Share](分享.md)
-* │   └── `BBAMNPShareProtocol.h`
+* │   └── `SWANShareProtocol.h`
 * ├── [ShippingAddress](地址、发票.md)
-* │   └── `BBAMNPShippingAddressProtocol.h`
+* │   └── `SWANShippingAddressProtocol.h`
 * ├── [UI](UI.md)
-* │   └── `BBAMNPNavigatorProtocol.h`
+* │   └── `SWANNavigatorProtocol.h`
 * ├── [Video](视频.md)
-* │   └── `BBAMNPVideoProtocol.h`
+* │   └── `SWANVideoProtocol.h`
 * ├── [Form](Form.md)
-* │   └── `BBAMNPFormProtocol.h`
+* │   └── `SWANFormProtocol.h`
 
 #### 1.3.1.2. 有默认实现的接口
 > 如下接口，小程序框架提供了默认实现，宿主可以根据自己的需要进行修改
 
 * ├── [配置项](ConfigOption.md)
-* │   └── BBAMNPConfigOptionProtocol.h 
+* │   └── SWANConfigOptionProtocol.h 
 
 ### 1.3.2. 实现步骤
 * 1、头文件import对应的接口,
 
 ```
-#import <BBAMNPNavigatorProtocol.h>
+#import <SWANNavigatorProtocol.h>
 ```
-* 2、继承`BBAMNPAdapterBaseImplement` 声明要实现的接口
+* 2、继承`SWANAdapterBaseImplement` 声明要实现的接口
 
 ```
-@interface BBAMNPNavigatorImplement : BBAMNPAdapterBaseImplement <BBAMNPNavigatorProtocol>
+@interface SWANNavigatorImplement : SWANAdapterBaseImplement <SWANNavigatorProtocol>
 
 @end
 ```
 * 3、注册接口
 
 ```
-mnp_registerAdapter(BBAMNPNavigatorImplement)
+mnp_registerAdapter(SWANNavigatorImplement)
 
 ```
 
 * 4、实现接口方法
 
 ```
-#import "BBAMNPNavigatorImplement.h"
+#import "SWANNavigatorImplement.h"
 #import "AppDelegate.h"
 
-@implementation BBAMNPNavigatorImplement
+@implementation SWANNavigatorImplement
 
-mnp_registerAdapter(BBAMNPNavigatorImplement)
+mnp_registerAdapter(SWANNavigatorImplement)
 
 // 小程序入口导航栈
 + (UINavigationController *)rootNavigationController {

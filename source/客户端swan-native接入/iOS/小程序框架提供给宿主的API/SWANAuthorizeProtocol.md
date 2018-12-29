@@ -1,13 +1,13 @@
 
 <!-- TOC -->
 
-- [1. BBAMNPAuthorizeProtocol](#1-bbamnpauthorizeprotocol)
+- [1. SWANAuthorizeProtocol](#1-SWANauthorizeprotocol)
     - [1.1. 文档版本](#11-文档版本)
     - [1.2. 功能说明](#12-功能说明)
     - [1.3. 开发指南](#13-开发指南)
 
 <!-- /TOC -->
-# 1. BBAMNPAuthorizeProtocol
+# 1. SWANAuthorizeProtocol
 ## 1.1. 文档版本
 
 |文档版本|修改日期|修改概述|
@@ -31,7 +31,7 @@
 * 2、调用方法
 
 ```
-[Pyramid.bba_MNPAuthorize requestScope:BBAMNPAuthorizeScopeCamera
+[Pyramid.bba_MNPAuthorize requestScope:SWANAuthorizeScopeCamera
                             appID:appID
                           succeed:^(NSDictionary *map) {
                               // check system camera authorize
@@ -40,23 +40,23 @@
                               if (cameraPermission == 1
                                   || cameraPermission == 2) {
                                   dispatchErrorWithStatus(MNPAuthorize_Camera_SystemDeny,
-                                                          kBBAMNPAuthorizeResultSystemDenyErrorMSG);
+                                                          kSWANAuthorizeResultSystemDenyErrorMSG);
                                   return ;
                               }
                               // authorize sucess
                               [self insertAfterAuthorize:dispatcher
                                        atPlaceHolderView:placeHolderView];
                               
-                          } error:^(BBAMNPAuthorizeError errorCode,
+                          } error:^(SWANAuthorizeError errorCode,
                                     NSDictionary *data) {
                               switch (errorCode) {
-                                  case BBAMNPAuthorizeErrorUserDeny:
+                                  case SWANAuthorizeErrorUserDeny:
                                       dispatchErrorWithStatus(MNPAuthorize_Camera_UserDeny,
-                                                              kBBAMNPAuthorizeResultDenyErrorMSG);
+                                                              kSWANAuthorizeResultDenyErrorMSG);
                                       break;
                                   default:
-                                      [dispatcher doCallbackWithStatus:kBBAMNPCallBackResultNetworkErrorStatus
-                                                               message:kBBAMNPAuthorizeResultNetworkErrorMSG
+                                      [dispatcher doCallbackWithStatus:kSWANCallBackResultNetworkErrorStatus
+                                                               message:kSWANAuthorizeResultNetworkErrorMSG
                                                                   data:nil];
                                       break;
                               }
@@ -71,7 +71,7 @@
  *
  */
 + (void)checkAndTryLoginUserAppId:(NSString *)appId
-                        loginType:(BBAMNPAccountLoginType)loginType
+                        loginType:(SWANAccountLoginType)loginType
                           succeed:(dispatch_block_t)succeedCallback
                             error:(dispatch_block_t)errorCallback;
 
@@ -81,22 +81,22 @@
  */
 + (void)requestScope:(NSString *)scope
                appID:(NSString *)appID
-             succeed:(BBAMNPAuthorizeMapCallback)succeedCallback
-               error:(BBAMNPAuthorizeErrorCallback)errorCallback;
+             succeed:(SWANAuthorizeMapCallback)succeedCallback
+               error:(SWANAuthorizeErrorCallback)errorCallback;
 /**
  *  确认登录状态
  *
  */
-+ (void)checkLoginStateClient:(BBAMNPAppIdentifyInfo *)info
-                      succeed:(BBAMNPAuthorizeMapCallback)succeedCallback error:(BBAMNPAuthorizeMapCallback)errorCallback;
++ (void)checkLoginStateClient:(SWANAppIdentifyInfo *)info
+                      succeed:(SWANAuthorizeMapCallback)succeedCallback error:(SWANAuthorizeMapCallback)errorCallback;
 
 /**
  *  获取用户授权信息列表
  *
  */
 + (void)getAppIDActionListClientEx:(NSString *)clientID
-                           succeed:(BBAMNPAuthorizeMapCallback)succeedCallback
-                             error:(BBAMNPAuthorizeMapCallback)errorCallback;
+                           succeed:(SWANAuthorizeMapCallback)succeedCallback
+                             error:(SWANAuthorizeMapCallback)errorCallback;
 
 /**
  *  修改权限
@@ -104,26 +104,26 @@
  */
 + (void)modifyAuthorizeScopeByAppID:(NSString *)appID
                               scope:(NSString *)scope
-                       operatorType:(BBAMNPAuthorizeOperatorType)opType
-                        requestType:(BBAMNPAuthorizeRequestType)requestType
-                            succeed:(BBAMNPAuthorizeDeterminatedCallback)succeedCallback
-                              error:(BBAMNPAuthorizeMapCallback)errorCallback;
+                       operatorType:(SWANAuthorizeOperatorType)opType
+                        requestType:(SWANAuthorizeRequestType)requestType
+                            succeed:(SWANAuthorizeDeterminatedCallback)succeedCallback
+                              error:(SWANAuthorizeMapCallback)errorCallback;
 
 /**
  *  获取 swan id
  *
  */
 + (void)getSwanId:(NSString *)appID
-          succeed:(BBAMNPAuthorizeMapCallback)succeedCallback
-            error:(BBAMNPAuthorizeMapCallback)errorCallback;
+          succeed:(SWANAuthorizeMapCallback)succeedCallback
+            error:(SWANAuthorizeMapCallback)errorCallback;
 
 /**
  *  获取私有的用户信息接口，仅仅暴露给slave组件，master不能调用
  *
  */
 + (void)getPrivateGetUserInfoByClient:(NSString *)clientID
-                              succeed:(BBAMNPAuthorizeMapCallback)succeedCallback
-                                error:(BBAMNPAuthorizeMapCallback)errorCallback;
+                              succeed:(SWANAuthorizeMapCallback)succeedCallback
+                                error:(SWANAuthorizeMapCallback)errorCallback;
 
 /**
  *  获取开放数据, 成功的话，返回 相关的服务器透传数据。 失败的话，返回错误
@@ -134,8 +134,8 @@
 + (void)getOpenData:(NSString *)appId
              appKey:(NSString *)appKey
              params:(NSDictionary *)params
-            succeed:(BBAMNPAuthorizeMapCallback)succeedCallback
-              error:(BBAMNPAuthorizeErrorCallback)errorCallback;
+            succeed:(SWANAuthorizeMapCallback)succeedCallback
+              error:(SWANAuthorizeErrorCallback)errorCallback;
 
 #pragma mark - ut
 
@@ -160,9 +160,9 @@
 
 /**
  * 数据请求结点，存储用于要请求的结点对应的模型数据，用于发起请求的参数获取key 为要请求的节点名，其中为 @"accredit":表示授权相关数据
- * value 为遵守 BBAMNPUpdateModule 协议的模型对象
+ * value 为遵守 SWANUpdateModule 协议的模型对象
  */
-+(NSMutableDictionary<NSString *,id<BBAMNPUpdateModule>> *)moduleMap:(NSString *)appID;
++(NSMutableDictionary<NSString *,id<SWANUpdateModule>> *)moduleMap:(NSString *)appID;
 ```
   
 
