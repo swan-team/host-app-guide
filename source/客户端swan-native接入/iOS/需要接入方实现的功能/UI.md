@@ -17,10 +17,10 @@
 ## 1.2. 功能说明
 
 ## 1.3. 开发指南
-* 实现接口BBAMNPNavigatorProtocol
+* 实现接口SWANNavigatorProtocol
 
 ```
-@protocol BBAMNPNavigatorProtocol <NSObject>
+@protocol SWANNavigatorProtocol <NSObject>
 
 /// 小程序入口导航栈
 + (UINavigationController *)rootNavigationController;

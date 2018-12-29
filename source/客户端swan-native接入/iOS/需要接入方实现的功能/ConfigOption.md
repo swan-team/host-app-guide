@@ -16,14 +16,14 @@
 --------------------------
 ## 1.2. 功能说明
 * 小程序框架的配置选项接口，通过接口宿主可以配置debug模式是否开启https请求校验、直播鉴权等
-* 配置项列表BBAMNPConfigOption
+* 配置项列表SWANConfigOption
 
 ```
 #pragma mark - 开关配置 - BOOL 类型
 /**
  开关配置 - BOOL 类型
  */
-@interface BBAMNPConfigOption()
+@interface SWANConfigOption()
 ///是否延时预加载下一个框架 默认值：YES
 @property (nonatomic, assign) BOOL delayPreloadSwanFrame;
 
@@ -63,7 +63,7 @@
 /**
  值配置-number类型
  */
-@interface BBAMNPConfigOption()
+@interface SWANConfigOption()
 
 ///navigateTo最大层数 默认值：5
 @property (nonatomic, assign) NSInteger maxNaviGateStack;
@@ -71,37 +71,37 @@
 ///白屏最长时间 默认值：6
 @property (nonatomic, assign) NSInteger maxWhiteScreenTime;
 
-/// 域名校验配置 默认值 BBAMNPDomainCheckOpenAllCheck
-@property (nonatomic, assign) BBAMNPDomainCheckType domainCheck;
+/// 域名校验配置 默认值 SWANDomainCheckOpenAllCheck
+@property (nonatomic, assign) SWANDomainCheckType domainCheck;
 
 @end
 ```
 
 ## 1.3. 开发指南
-* 实现接口BBAMNPConfigOptionProtocol
+* 实现接口SWANConfigOptionProtocol
 
 ```
-@protocol BBAMNPConfigOptionProtocol <NSObject>
+@protocol SWANConfigOptionProtocol <NSObject>
 
 @optional
 /**
- 返回配置参数对象 默认值为[BBAMNPConfigOption defaultConfigOption]
+ 返回配置参数对象 默认值为[SWANConfigOption defaultConfigOption]
 
 @return 返回配置参数对象
 */
-+ (BBAMNPConfigOption *)configOption;
++ (SWANConfigOption *)configOption;
 ```
 * 示例
 
 ```
-#define BBAMNPConfigOptionImplementDefault BBAMNPConfigOption.defaultConfigOption
+#define SWANConfigOptionImplementDefault SWANConfigOption.defaultConfigOption
 
-@implementation BBAMNPConfigOptionImplement
+@implementation SWANConfigOptionImplement
 
-mnp_registerAdapter(BBAMNPConfigOptionImplement)
+mnp_registerAdapter(SWANConfigOptionImplement)
 
-+ (BBAMNPConfigOption *)configOption{
-    BBAMNPConfigOption *config = BBAMNPConfigOptionImplementDefault;
++ (SWANConfigOption *)configOption{
+    SWANConfigOption *config = SWANConfigOptionImplementDefault;
     config.maxWhiteScreenTime = [self maxWhiteScreenTime];
     config.disableLocalPackage = [self disableLocalPackage];
     config.delayUpdatePackageSilent = [self isDelayUpdatePackageSilent];
@@ -118,10 +118,10 @@ mnp_registerAdapter(BBAMNPConfigOptionImplement)
     config.liveNeedAuthorize = [self liveNeedAuthorize];
     config.ignoreDomainCheck = [self ignoreDomainCheck];
     
-    BBAMNPDebugModeDownloaderType downloaderType = [[BBADebugMode readValueWithKey:kBBAMNPDebugDownloaderTypeKey] integerValue];
-    if (downloaderType == BBAMNPDebugModeDownloaderTypeAPS) {
+    SWANDebugModeDownloaderType downloaderType = [[BBADebugMode readValueWithKey:kSWANDebugDownloaderTypeKey] integerValue];
+    if (downloaderType == SWANDebugModeDownloaderTypeAPS) {
         config.pmsEnable = NO;
-    } else if (downloaderType == BBAMNPDebugModeDownloaderTypePMS) {
+    } else if (downloaderType == SWANDebugModeDownloaderTypePMS) {
         config.pmsEnable = YES;
     }
 #endif

@@ -19,10 +19,10 @@
 当[表单组件](https://smartprogram.baidu.com/docs/develop/component/formlist/#form/)的report-submit设置为YES时，小程序框架会调用此接口获取FormID
 
 ## 1.3. 开发指南
-* 实现接口BBAMNPFormProtocol
+* 实现接口SWANFormProtocol
 
 ```
-@protocol BBAMNPFormProtocol <NSObject>
+@protocol SWANFormProtocol <NSObject>
 /**
  获取formid
 
@@ -44,12 +44,12 @@
                  fail:(void (^)(NSString *errorInfo, NSString *errorCode))fail{
     BBANormalAPIRequest *request = [[BBANormalAPIRequest alloc] init];
     request.method = APIRequestMethodPOST;
-    NSString *hoststr = [BBAMNPPlatformService rootServerHost];
+    NSString *hoststr = [SWANPlatformService rootServerHost];
     // 获取时间戳
     NSTimeInterval currentTiemstamp = [[NSDate date] timeIntervalSince1970];
     NSInteger updateDelta = 0;
     NSString *rasign = [self rasignByDelat:updateDelta timestamp:currentTiemstamp];
-    NSString *urlString = [[NSString alloc] initWithFormat:@"%@/%@?timestamp=%lld&rasign=%@&delta=%zd&%@", hoststr, FORM_GetFormId_URL,(long long)currentTiemstamp,rasign,updateDelta,[BBAMNPPlatformService composeParameters]];
+    NSString *urlString = [[NSString alloc] initWithFormat:@"%@/%@?timestamp=%lld&rasign=%@&delta=%zd&%@", hoststr, FORM_GetFormId_URL,(long long)currentTiemstamp,rasign,updateDelta,[SWANPlatformService composeParameters]];
     request.url = urlString;
     
     if (CHECK_STRING_VALID(appID)) {

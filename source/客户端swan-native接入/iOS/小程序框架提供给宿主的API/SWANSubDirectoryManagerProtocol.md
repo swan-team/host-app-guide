@@ -1,12 +1,12 @@
 <!-- TOC -->
 
-- [1. BBAMNPSubDirectoryManagerProtocol](#1-bbamnpsubdirectorymanagerprotocol)
+- [1. SWANSubDirectoryManagerProtocol](#1-SWANsubdirectorymanagerprotocol)
     - [1.1. 文档版本](#11-文档版本)
     - [1.2. 功能说明](#12-功能说明)
     - [1.3. 开发指南](#13-开发指南)
 
 <!-- /TOC -->
-# 1. BBAMNPSubDirectoryManagerProtocol
+# 1. SWANSubDirectoryManagerProtocol
 ## 1.1. 文档版本
 
 |文档版本|修改日期|修改概述|
@@ -30,7 +30,7 @@
 * 2、调用方法
 
 ```
-[Pyramid.bba_MNPSubDirectoryManager swapSubDirectoryPath:appID directory:BBAMNPSubDirectoryTmp]
+[Pyramid.bba_MNPSubDirectoryManager swapSubDirectoryPath:appID directory:SWANSubDirectoryTmp]
 ```
 * 3、方法列表
 
@@ -46,7 +46,7 @@
  directory，枚举值，目前有四个子文件夹
  */
 +(NSString *)swapSubDirectoryPath:(NSString *)appId
-                        directory:(BBAMNPSubDirectoryName)directory;
+                        directory:(SWANSubDirectoryName)directory;
 
 /**
  * 将小程序相对路径转为绝对路径 例：前端传过来的文件名，转为绝对路径

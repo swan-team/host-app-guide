@@ -1,6 +1,6 @@
 <!-- TOC -->
 
-- [1. BBAMNPWebViewProtocol](#1-bbamnpwebviewprotocol)
+- [1. SWANWebViewProtocol](#1-SWANwebviewprotocol)
     - [1.1. 文档版本](#11-文档版本)
     - [1.2. 功能说明](#12-功能说明)
         - [1.2.1. 功能说明](#121-功能说明)
@@ -19,7 +19,7 @@
         - [1.3.11. 同步cookie](#1311-同步cookie)
 
 <!-- /TOC -->
-# 1. BBAMNPWebViewProtocol
+# 1. SWANWebViewProtocol
 ## 1.1. 文档版本
 
 |文档版本|修改日期|修改概述|
@@ -36,7 +36,7 @@
 
 ### 1.2.2. 设计原理
 
-+ 在框架内部的webview加载完成或析构的时候，调用**BBAMNPWebViewProtocol**中的协议方法，宿主如果实现了相关协议方法就可以在其中添加自有逻辑。
++ 在框架内部的webview加载完成或析构的时候，调用**SWANWebViewProtocol**中的协议方法，宿主如果实现了相关协议方法就可以在其中添加自有逻辑。
 + 目前共有5中类型的webview，其中包括：masterWebView、slaveWebView、consoleWebView、adWebView、webViewComponent。具体webview的意义请翻阅小程序框架文档。
 
  

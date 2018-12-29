@@ -1,12 +1,12 @@
 <!-- TOC -->
 
-- [1. BBAMNPMesViewDialogProtocol](#1-bbamnpmesviewdialogprotocol)
+- [1. SWANMesViewDialogProtocol](#1-SWANmesviewdialogprotocol)
     - [1.1. 文档版本](#11-文档版本)
     - [1.2. 功能说明](#12-功能说明)
     - [1.3. 开发指南](#13-开发指南)
 
 <!-- /TOC -->
-# 1. BBAMNPMesViewDialogProtocol
+# 1. SWANMesViewDialogProtocol
 ## 1.1. 文档版本
 
 |文档版本|修改日期|修改概述|

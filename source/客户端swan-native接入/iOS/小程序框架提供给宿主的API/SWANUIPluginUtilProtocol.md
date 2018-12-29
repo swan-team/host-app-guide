@@ -1,12 +1,12 @@
 <!-- TOC -->
 
-- [1. BBAMNPUIPluginUtilProtocol](#1-bbamnpuipluginutilprotocol)
+- [1. SWANUIPluginUtilProtocol](#1-SWANuipluginutilprotocol)
     - [1.1. 文档版本](#11-文档版本)
     - [1.2. 功能说明](#12-功能说明)
     - [1.3. 开发指南](#13-开发指南)
 
 <!-- /TOC -->
-# 1. BBAMNPUIPluginUtilProtocol
+# 1. SWANUIPluginUtilProtocol
 ## 1.1. 文档版本
 
 |文档版本|修改日期|修改概述|
