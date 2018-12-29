@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/swan-team/host-app-guide#readme",
   "dependencies": {
-    "gitbook-cli": "^2.3.2"
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-sequence": "^0.1.1"
   }
 }
