@@ -4,7 +4,7 @@
 
 ## 整体界面
 
-<img src="./images/layout.png" width="250" />
+![layout](./images/layout.png)
 
 ## 具体模块说明
 

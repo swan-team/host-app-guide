@@ -7,11 +7,12 @@
 * 客户端 swan-native 接入
     * Android
         * 简介
-            * [分享](客户端swan-native接入/Android/分享.md)
+            <!-- * [分享](客户端swan-native接入/Android/分享.md) -->
             * [名词解释](客户端swan-native接入/Android/名词解释.md)
             * [小程序 Lib 说明](客户端swan-native接入/Android/小程序Lib说明.md)   
             * [第三方依赖库说明](客户端swan-native接入/Android/第三方依赖库说明.md)   
         * 接入步骤说明
+            * [外部宿主接入](客户端swan-native接入/Android/接入步骤说明/外部宿主接入.md)        
             * [百度内部接入](客户端swan-native接入/Android/接入步骤说明/百度内部接入.md)
         * 需要接入方实现的功能
             * 支付
