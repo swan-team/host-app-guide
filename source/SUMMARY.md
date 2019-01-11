@@ -79,7 +79,6 @@
             * [夜间模式](客户端swan-native接入/iOS/需要接入方实现的功能/夜间模式.md)
             * [定位](客户端swan-native接入/iOS/需要接入方实现的功能/定位.md)
             * [导航](客户端swan-native接入/iOS/需要接入方实现的功能/导航.md)
-            * [拍照](客户端swan-native接入/iOS/需要接入方实现的功能/拍照.md)
             * [授权](客户端swan-native接入/iOS/需要接入方实现的功能/授权.md)
             * [支付](客户端swan-native接入/iOS/需要接入方实现的功能/支付.md)
             * [直播](客户端swan-native接入/iOS/需要接入方实现的功能/直播.md)

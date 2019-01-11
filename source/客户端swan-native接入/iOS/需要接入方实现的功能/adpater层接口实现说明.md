@@ -30,8 +30,6 @@
 * │   └── `SWANAccountProtocol.h`
 * ├── [Authorize](授权.md)
 * │   └── `SWANAuthorizeReqestProtocol.h`
-* ├── [Camera](拍照.md)
-* │   └── `SWANCameraProtocol.h`
 * ├── [Platform](Platform.md)
 * │   └── `SWANPlatformProtocol.h`
 * ├── [Invoice](地址、发票.md)
@@ -82,6 +80,7 @@
 @end
 ```
 * 3、注册接口
+> <font color='red'>注意文件名必须和类名一致，否则注册失败</font>
 
 ```
 mnp_registerAdapter(SWANNavigatorImplement)
@@ -112,8 +111,8 @@ mnp_registerAdapter(SWANNavigatorImplement)
         NSLog(@"小程序退场");
     }
 }
-
 @end
 ```
+
 
 
