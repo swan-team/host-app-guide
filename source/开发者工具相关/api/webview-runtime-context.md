@@ -1,0 +1,56 @@
+master、slave、web-view组件入口onReady中的context：
+
+- webviewId
+- device
+  - album - 模拟器存储图片路径
+  - cuid - 模拟器cuid
+  - deviceId - 模拟器设备id
+  - file - 模拟器存储文件路径
+  - systemInfo - 模拟器系统信息
+  - tmp - 模拟器存储临时文件路径
+- project
+    - sourceCodePath - 开发者源代码路径
+    - compiledCodePath - 开发者编译产出代码路径
+- cache
+    - clear() - 清空storage
+    - get(key) - 异步获取指定key
+    - getAllSync() - 获取storage全部内容
+    - getSync(key) - 获取指定key
+    - remove(key) - 删除指定key
+    - set(key, value) - 异步设置指定key的值
+    - setSync(key, value) - 设置指定key的值
+- storage
+    - clear() - 清空storage
+    - getAllSync() - 获取storage全部内容
+    - getSync(key) - 获取指定key
+    - remove(key) - 删除指定key
+    - setSync(key, value) - 设置指定key的值
+- app
+    - appId
+    - appVersion - 宿主app版本
+    - config - 开发者工程中的config.json内容
+    - extConfig - 开发者工程中的ext.json内容
+    - serverInfo - 小程序官网上开发者配置的信息（如果没有登录，则为空对象）
+      - needWeb - 是否需要web化编译
+      - isTp - 是否为服务商提供的小程序
+      - domains - 小程序官网中配置的域名信息
+      - app_name - app名称
+      - app_photo - app头像
+    - startParams - 开发者工具上配置的启动参数
+    - staticServer - 静态文件服务器
+    - swanCoreVersion - swan框架版本
+    - userDataPath - 用户路径
+- utils
+    - execute(callback, params) - 按照swan-core所需格式执行callback
+      - `callback` Function - 回调函数
+      - `params` Object - 回调函数参数
+    - execute(callback, status, message, data) - 按照swan-core所需格式执行callback
+      - `callback` Function - 回调函数
+      - `status` Object - 回调函数参数: 状态码
+      - `message` Object - 回调函数参数: 状态信息
+      - `data` Object - 回调函数参数: 数据
+    - parse(status, message, data) - 转换成swan-core能识别的数据格式
+      - `status` Object - 回调函数参数: 状态码
+      - `message` Object - 回调函数参数: 状态信息
+      - `data` Object - 回调函数参数: 数据
+    - clipboard - 参照[electron clipboard](https://electronjs.org/docs/api/clipboard)
