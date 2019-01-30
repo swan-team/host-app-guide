@@ -1,0 +1,64 @@
+form入口onInit中的context：
+- app
+  - serverInfo - 小程序官网上开发者配置的信息（如果没有登录，则为空对象）
+    - needWeb - 是否需要web化编译
+    - isTp - 是否为服务商提供的小程序
+    - domains - 小程序官网中配置的域名信息
+    - app_name - app名称
+    - app_photo - app头像
+- cache
+  - get(key)
+    - `key` String
+  - set(key, value)
+    - `key` String
+    - `value` any
+- cookies - 同electron中的[cookies](https://electronjs.org/docs/api/cookies)
+- event
+  - on(eventName, eventHandler) - 注册事件
+    - `eventName` String - 事件名
+    - `eventHandler` Function - 事件处理函数
+  - once(eventName, eventHandler) - 注册一次性事件
+    - `eventName` String - 事件名
+    - `eventHandler` Function - 事件处理函数
+  - send(eventName, eventParams) - 发送事件
+    - `eventName` String - 事件名
+    - `eventParams` Object - 事件参数
+  - sendTo(id, eventName, eventParams) - 向指定进程发送事件
+    - `id` 进程id
+    - `eventName` String - 事件名
+    - `eventParams` Object - 事件参数
+- fs
+    - copy - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - createReadStream - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - createWriteStream - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - emptyDir - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - ensureDir - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - ensureFile - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - isDirectory(path) Promise<Boolean\> - 返回路径是否是文件夹
+      - `path` String - 路径
+    - isDirEmpty(path) Promise<Boolean\> - 返回路径是否为空目录
+      - `path` String - 路径
+    - isFile(path) Promise<Boolean\> - 返回路径是否为文件
+      - `path` String - 路径
+    - isSymlink(path) Promise<Boolean\> - 返回路径是否为链接
+      - `path` String - 路径
+    - mkdir - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - move - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - pathExists - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - readdir - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - readFile - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - readJson - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - readlink - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - remove - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - rename - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - stat - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - symlink - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - unlink - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - writeFile - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+    - writeJson - 与[node-fs-extra](https://github.com/jprichardson/node-fs-extra)一致
+- network
+  - request - 参照[request-promise](https://github.com/request/request-promise)
+- shell - 参照[electron shell](https://electronjs.org/docs/api/shell)
+- util
+  - clipboard - 参照[electron clipboard](https://electronjs.org/docs/api/clipboard)
+  - toFileUrl - 参照(file-url)[https://github.com/sindresorhus/file-url]
