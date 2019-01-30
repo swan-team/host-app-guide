@@ -104,7 +104,11 @@ extensions/simulator-swan-api/src
 ## 逻辑概述
 开发者工具授权端能力实现逻辑如下流程图：
 
+<<<<<<< HEAD
 ![开发者工具授权端能力实现](./assets/authorize.jpg)
+=======
+![开发者工具授权端能力实现](./image/authorize.jpg)
+>>>>>>> 461852091cac109103e658ed734ab78c3dd1ae36
 
 <!-- 按照设计流程图，将逻辑分块，以promise串联， -->
 - 授权方法，详见上图
