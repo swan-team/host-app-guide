@@ -4,10 +4,11 @@
     - [1.1. 文档版本](#11-文档版本)
     - [1.2. 功能说明](#12-功能说明)
     - [1.3. 开发指南](#13-开发指南)
-        - [1.3.1. 需要实现的接口列表](#131-需要实现的接口列表)
-            - [1.3.1.1. 无默认实现的接口](#1311-无默认实现的接口)
-            - [1.3.1.2. 有默认实现的接口](#1312-有默认实现的接口)
-        - [1.3.2. 实现步骤](#132-实现步骤)
+        - [1.3.1. 必选接口列表](#131-必选接口列表)
+        - [1.3.2. 可选接口列表](#132-可选接口列表)
+            - [1.3.2.1. 无默认实现的接口](#1321-无默认实现的接口)
+            - [1.3.2.2. 有默认实现的接口](#1322-有默认实现的接口)
+        - [1.3.3. 实现步骤](#133-实现步骤)
 
 <!-- /TOC -->
 # 1. adapter层接口实现说明
@@ -22,9 +23,9 @@
 本文档介绍如何实现SWAN工程需要宿主实现的接口
 
 ## 1.3. 开发指南
-### 1.3.1. 需要实现的接口列表
-#### 1.3.1.1. 无默认实现的接口
+### 1.3.1. 必选接口列表
 > 宿主接入了相关功能的小程序，必须实现的接口
+
 
 * ├── [Account](登录.md)
 * │   └── `SWANAccountProtocol.h`
@@ -32,17 +33,10 @@
 * │   └── `SWANAuthorizeReqestProtocol.h`
 * ├── [Platform](Platform.md)
 * │   └── `SWANPlatformProtocol.h`
-* ├── [Invoice](地址、发票.md)
-* │   └── `SWANInvoiceProtocol.h`
-* ├── [Live](直播.md)
-* │   └── `SWANLiveProtocol.h`
+* ├── [Video](视频.md)
+* │   └── `SWANVideoProtocol.h`
 * ├── [Location](定位.md)
 * │   └── `SWANLocationProtocol.h`
-* ├── [Map](地图.md)
-* │   ├── `SWANMapLocationProtocol.h`
-* │   ├── `SWANMapProtocol.h`
-* │   ├── `SWANMapSearchProtocol.h`
-* │   ├── `BBAMapKitPoiInfoProtocol.h`
 * ├── [Payment](支付.md)
 * │   └── `SWANPaymentProtocol.h`
 * ├── [Photo](图片.md)
@@ -51,22 +45,34 @@
 * │   └── `SWANScanCodeProtocol.h`
 * ├── [Share](分享.md)
 * │   └── `SWANShareProtocol.h`
+
+
+### 1.3.2. 可选接口列表
+#### 1.3.2.1. 无默认实现的接口
+* ├── [Invoice](地址、发票.md)
+* │   └── `SWANInvoiceProtocol.h`
+* ├── [Live](直播.md)
+* │   └── `SWANLiveProtocol.h`
+* ├── [Map](地图.md)
+* │   ├── `SWANMapLocationProtocol.h`
+* │   ├── `SWANMapProtocol.h`
+* │   ├── `SWANMapSearchProtocol.h`
+* │   ├── `BBAMapKitPoiInfoProtocol.h`
 * ├── [ShippingAddress](地址、发票.md)
 * │   └── `SWANShippingAddressProtocol.h`
 * ├── [UI](UI.md)
 * │   └── `SWANNavigatorProtocol.h`
-* ├── [Video](视频.md)
-* │   └── `SWANVideoProtocol.h`
 * ├── [Form](Form.md)
 * │   └── `SWANFormProtocol.h`
 
-#### 1.3.1.2. 有默认实现的接口
+#### 1.3.2.2. 有默认实现的接口
 > 如下接口，小程序框架提供了默认实现，宿主可以根据自己的需要进行修改
 
 * ├── [配置项](ConfigOption.md)
 * │   └── SWANConfigOptionProtocol.h 
 
-### 1.3.2. 实现步骤
+
+### 1.3.3. 实现步骤
 * 1、头文件import对应的接口,
 
 ```

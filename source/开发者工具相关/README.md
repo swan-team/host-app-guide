@@ -6,20 +6,13 @@
 要实现一个新的APi,需要在开发者工具模拟器扩展中添加一个api的实现,同时在框架的 extensionJs 中添加一个新的api描述。下面简述如何快速添加一个api
 
 - 安装百度提供的开发者工具安装包
-<<<<<<< HEAD
 - 下载文档内的[demo示例工程](assets/hosts.zip)
 - 打开开发者工具, ${hostPath} 是demo解压后的目录
     - mac系统在终端中使用下面的命令,
-    `/Applications/百度开发者工具-host.app/Contents/MacOS/百度开发者工具-beta --host ${hostPath} --console`
-    - windows系统在cmd中使用命令 `%USERPROFILE%\AppData\Local\Programs\swan-ide-gui\百度开发者工具-beta.exe --host ${hostPath} --console` ,
+    `/Applications/百度开发者工具.app/Contents/MacOS/百度开发者工具 --host ${hostPath} --console`
+    - windows系统在cmd中使用命令 `%USERPROFILE%\AppData\Local\Programs\swan-ide-gui\百度开发者工具.exe --host ${hostPath} --console` ,
     也可以使用快捷方式,在后面添加--host ${hostPath} --console参数启动工具
 - 打开 ${hostPath}/demo/program/simulator-extensions/demo-api/master.js文件,这个是api能力的native实现部分。  <p style="display:none;">~~todo api没有实现schememap,这个还做不了,实现方式待确认。。。~~</p>
-=======
-- 打开百度开发者工具文件代码目录。
-   - mac系统文件位置`/Applications/百度开发者工具-host.app/Contents/Resources/app`,
-   - windows系统文件位置`%USERPROFILE%\AppData\Local\Programs\swan-ide-gui\resources\app`
-- 打开代码目录下extensions/demo-api/master.js文件,这个是api能力的native实现部分。  <p style="display:none;">~~todo api没有实现schememap,这个还做不了,实现方式待确认。。。~~</p>
->>>>>>> 461852091cac109103e658ed734ab78c3dd1ae36
 - 修改schemeHandlers部分的代码,添加下面内容 
     
         // schemeHandlers的key部分,是对应api scheme的action部分,当需要新增api时,添加一个对应的api实现即可。
@@ -91,11 +84,7 @@
 
 
 ## 接入流程图
-<<<<<<< HEAD
 - ![流程图](assets/flow.png)
-=======
-- ![流程图](image/flow.png)
->>>>>>> 461852091cac109103e658ed734ab78c3dd1ae36
 ## 详细说明 
    - [如何开发和调试](开发和调试.md)
    - [如何增加宿主配置](增加宿主配置.md)

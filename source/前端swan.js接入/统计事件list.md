@@ -42,55 +42,53 @@
 
 | 事件名称 | 触发时机 |
 |:---- |:---- |
-| masterPreloadStart | 开始 |
-| masterPreloadCreateHistorystack | 建立页面栈 |
-| masterPreloadCommunicatorListened | 通讯开始监听 |
-| masterPreloadConstructVirtualComponentFactory | 构造组件工厂 |
-| masterPreloadGetMastermanager|   mastermanager创建成功 |
-| masterPreloadDecorateContext | 包裹对开发者暴露的上下文 |
-| masterPreloadInitBindingEnvironmentEvents | 绑定声明周期相关事件 |
-| masterPreloadConstructSlaveEventsRouter | 构造slave事件路由 |
-| masterPreloadInitBindingEvents | 初始化事件绑定 |
-| masterPreloadEnd | 预加载结束 |
+| masterPreloadStart| master预加载开始 |
+| masterPreloadCreateHistorystack| 页面栈建立完成 |
+| masterPreloadCommunicatorListened| 通讯监听已开启 |
+| masterPreloadVirtualComponentFactoryInstantiated|用户的自定义组件的创建工厂实例化完成 |
+| masterPreloadExtensionInstantiated| 宿主扩展实例化完成 |
+| masterPreloadAllSlaveEventsListened| 所有页面级相关事件已开启监听 |
+| masterPreloadMountMastermanagerToGlobal| mastermanager创建成功 |
+| masterPreloadContextDecorated| 对开发者暴露的上下文已完成装饰 |
+| masterPreloadAppReadyListened| master开始监听用户active |
+| masterPreloadEnd| master预加载结束 |
 | -- | -- |
-| slavePreloadStart | slave预加载开始 |
-| slavePreloadListened | slave开始监听用户active |
-| slavePreloadGetComponents | 拿到所有组件 |
-| slavePreloadGetComponentFactory | 拿到组件工厂 |
-| slavePreloadDefineComponentsStart | 定义组件开始 |
-| slavePreloadDefineComponentsEnd | 定义组件结束 |
-| slavePreloadEnd | slave预加载结束 |
+| slavePreloadStart| slave预加载开始 |
+| slavePreloadGetComponents| 所有组件已被获取 |
+| slavePreloadGetComponentFactory| 拿到组件工厂 |
+| slavePreloadDefineComponentsStart| 定义组件开始 |
+| slavePreloadDefineComponentsEnd| 定义组件结束 |
+| slavePreloadPageReadyListened| slave开始监听用户active |
+| slavePreloadEnd| slave预加载结束 |
 | -- | -- |
-| masterActiveStart | 用户进入小程序 |
-| masterActiveInitRender | 初始化渲染 |
-| masterActiveCreateInitslave | 创建初始slave |
-| masterActivePushInitslave | 入栈开始 |
-| masterActiveCreateInitslaveEnd | 创建初始slave结束 |
-| masterActivePushInitslaveEnd | 入栈结束 |
-| masterActiveAppJsLoaded|app . js加载结束 |
-| masterActiveCreatePageFlowStart | 创建页面流开始 |
-| masterActiveGetUserPageInstance | 创建用户page |
-| masterActiveInitUserPageInstance | 初始化用户page实例 |
-| masterActiveOnqueueInitslave | 增加生命周期 |
-| masterActiveCreatePageFlowEnd | 创建页面流结束 |
-| masterActiveSendInitdataStart | 发送数据开始 |
-| masterActiveSendInitdataEnd | 发送数据结束 |
-| masterActiveInitAction|app . js开始加载 |
+|masterActiveStart|用户进入小程序 |
+|masterActiveInitRenderStart|初始化渲染 |
+|masterActivePushInitSlaveStart|入栈开始 |
+|masterActiveCreateInitSlave|创建初始slave |
+|masterActiveInitAction|初始化第一个页面 |
+|masterActiveInitBindingEnvironmentEvents| App环境相关事件已监听 |
+|masterActiveAppJsLoaded|app.js加载结束 |
+|masterActiveCreateInitslaveEnd|创建初始slave结束 |
+|masterActivePushInitslaveEnd|入栈结束 |
+|masterActiveCreatePageFlowStart|创建页面流开始 |
+|masterActiveGetUserPageInstance|创建用户page |
+|masterActiveInitUserPageInstance| 初始化用户page实例 |
+|masterActiveCreatePageFlowEnd|创建页面流结束 |
+|masterActiveSendInitdataStart|发送数据开始 |
+|masterActiveSendInitdataEnd|发送数据结束 |
+|masterActiveOnqueueInitslave|slave的onEnqueue生命周期函数已执行 |
 | -- | -- |
-| slaveActiveStart | 用户打开一个新的webview |
-| slaveActivePageLoadStart | 加载开始 |
-| slaveActiveCssLoaded | css加载完成 |
-| slaveActiveSwanJsLoaded | js加载完成 |
-| slaveActivePageRender | 页面渲染完成 |
-| slaveActiveConstructUserPage | 构造开发者页面 |
-| slaveActiveDefineComponentPage | 定义page-component |
-| slaveActiveUserPageSlaveloaded | 通知渲染完成 |
-| slaveActiveJsParsed | slavejs解析完成 |
-| slaveActiveReceiveInitData | 接收到数据 |
-| slaveActiveRenderStart | 接收到数据后渲染页面开始 |
-| slaveActiveRenderEnd | 接收到数据后渲染页面结束 |
-| slaveActivePageAttached | 加载完成，未渲染 |
-| slaveFeFirstPaint | 渲染完成（仅Android上有） |
-| slaveActiveAppCssLoaded | 用户资源app.css加载完成 |
-| slaveActivePageCssLoaded | 用户资源page.css 加载完成 |
-| slaveActiveSwanJsStart | js加载开始 |
+|slaveActiveStart|用户打开一个新的webview |
+|slaveActivePageLoadStart|开始加载开发者业务资源 |
+|slaveActiveCssLoaded|css加载完成 |
+|slaveActiveSwanJsStart|模板业务代码开始加载 |
+|slaveActivePageRender|Page组件开始定义 |
+|slaveActiveDefinePageComponentEnd|Page组件定义已完成 |
+|slaveActivePageComponentInstantiated|初始化页面对象已完成 |
+|slaveActiveNoticeMasterSlaveloaded|调用页面对象的加载完成已通知master |
+|slaveActiveJsParsed|slavejs解析完成 |
+|slaveActiveSwanJsLoaded|模板业务代码加载完成 |
+|slaveActiveReceiveInitData| slave接收到数据 |
+|slaveActiveRenderStart| slave接收到数据后渲染页面开始 |
+|slaveActiveRenderEnd| slave接收到数据后渲染页面结束 |
+|slaveActivePageAttached| 页面加载完成 |
