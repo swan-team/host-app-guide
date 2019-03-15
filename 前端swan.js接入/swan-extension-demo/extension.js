@@ -2,7 +2,7 @@
  * @file extension示例
  * @author sunweinan(sunweinan@baidu.com)
  */
-define('swan-extension', ['swan', 'boxjs'], function (require, module, exports, define, swan, boxjs) {
+define('swan-extension-service', ['swan', 'boxjs'], function (require, module, exports, define, swan, boxjs) {
     module.exports = {
         name: 'tieba',
         // 此处扩展的名字应与客户端实现的ACTION_TYPE对应
