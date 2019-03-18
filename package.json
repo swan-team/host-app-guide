@@ -1,6 +1,6 @@
 {
   "name": "host-app-guide",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "百度小程序开源宿主接入规范文档",
   "main": "index.js",
   "scripts": {
