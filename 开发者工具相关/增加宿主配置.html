@@ -716,9 +716,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.1.4" data-path="../客户端swan-native接入/iOS/简介/小程序开源框架.html">
+        <li class="chapter " data-level="1.3.2.1.4" data-path="../客户端swan-native接入/iOS/简介/小程序开源框架.md">
             
-                <a href="../客户端swan-native接入/iOS/简介/小程序开源框架.html">
+                <span>
             
                     
                     小程序开源框架
@@ -729,9 +729,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.1.5" data-path="../客户端swan-native接入/iOS/简介/小程序运行时架构设计.html">
+        <li class="chapter " data-level="1.3.2.1.5" data-path="../客户端swan-native接入/iOS/简介/小程序运行时架构设计.md">
             
-                <a href="../客户端swan-native接入/iOS/简介/小程序运行时架构设计.html">
+                <span>
             
                     
                     小程序运行时架构设计
@@ -1613,6 +1613,77 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6.5" >
+            
+                <span>
+            
+                    
+                    外部接入方服务端细节指导
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.5.1" data-path="../server端接入/细节指导/oauth实现.html">
+            
+                <a href="../server端接入/细节指导/oauth实现.html">
+            
+                    
+                    oauth实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.2" data-path="../server端接入/细节指导/swanid机制说明.html">
+            
+                <a href="../server端接入/细节指导/swanid机制说明.html">
+            
+                    
+                    swanid机制说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.3" data-path="../server端接入/细节指导/宿主服务端接口统计.html">
+            
+                <a href="../server端接入/细节指导/宿主服务端接口统计.html">
+            
+                    
+                    宿主服务端接口统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.4" data-path="../server端接入/细节指导/授权指导.html">
+            
+                <a href="../server端接入/细节指导/授权指导.html">
+            
+                    
+                    授权指导
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -1677,36 +1748,67 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x589E;&#x52A0;&#x5BBF;&#x4E3B;&#x914D;&#x7F6E;">&#x589E;&#x52A0;&#x5BBF;&#x4E3B;&#x914D;&#x7F6E;</h1>
-<p>&#x5728;${hostPath}/${hostName}/program/&#x76EE;&#x5F55;&#x4E0B;&#x65B0;&#x5EFA; config.json &#x6587;&#x4EF6;,&#x586B;&#x5199;&#x4F60;&#x7684;&#x5BBF;&#x4E3B;&#x914D;&#x7F6E;&#x3002;
-hostName&#x4F7F;&#x7528;&#x5728;&#x767E;&#x5EA6;&#x6CE8;&#x518C;&#x7684;&#x82F1;&#x6587;name,&#x5BBF;&#x4E3B;&#x914D;&#x7F6E;&#x7684;json&#x90E8;&#x5206;&#x5982;&#x4E0B;</p>
+<ul>
+<li>&#x5BBF;&#x4E3B;&#x914D;&#x7F6E;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5982;&#x4E0B;</li>
+</ul>
+<pre><code>&#x251C;&#x2500;&#x2500; hostName                               // &#x5BBF;&#x4E3B;&#x540D;&#x79F0;&#xFF0C;&#x4E0E;package.json&#x7684;appName&#x4E00;&#x81F4;
+    &#x251C;&#x2500;&#x2500; program 
+        &#x251C;&#x2500;&#x2500; package.json                   // &#x914D;&#x7F6E;
+        &#x251C;&#x2500;&#x2500; config.js                      // &#x5165;&#x53E3;&#x6587;&#x4EF6;
+        &#x2514;&#x2500;&#x2500; simulator-extensions 
+            &#x251C;&#x2500;&#x2500; simulator-extensions-1     // &#x6A21;&#x62DF;&#x5668;&#x6269;&#x5C55;&#x4E00;
+            &#x2514;&#x2500;&#x2500; simulator-extensions-2     // &#x6A21;&#x62DF;&#x5668;&#x6269;&#x5C55;&#x4E8C;
+</code></pre><ul>
+<li>&#x5728; <code>${hostPath}/${hostName}/program/</code> &#x76EE;&#x5F55;&#x4E0B;&#x65B0;&#x5EFA; package.json &#x6587;&#x4EF6;,&#x586B;&#x5199;&#x4F60;&#x7684;&#x5BBF;&#x4E3B;&#x914D;&#x7F6E;&#x3002;
+hostName&#x4F7F;&#x7528;&#x5728;&#x767E;&#x5EA6;&#x6CE8;&#x518C;&#x7684;&#x82F1;&#x6587;name, package.json &#x7684;&#x914D;&#x7F6E;&#x5982;&#x4E0B;</li>
+</ul>
 <pre><code>{
-  // &#x5BBF;&#x4E3B;&#x7684;&#x540D;&#x79F0;,&#x5207;&#x6362;&#x5BBF;&#x4E3B;&#x65F6;&#x5C55;&#x793A;&#x7ED9;&#x5F00;&#x53D1;&#x8005;
-  &quot;name&quot;: &quot;&#x793A;&#x4F8B;&quot;,
-  // app&#x540D;&#x79F0;,&#x82F1;&#x6587;,&#x62FC;&#x63A5;ua&#x4F7F;&#x7528;
-  &quot;appName&quot;: &quot;demo&quot;,
-  // &#x652F;&#x6301;&#x7684;swanjs&#x7684;&#x6700;&#x5C0F;&#x7248;&#x672C;
-  &quot;minSwanJsVersion&quot;: &quot;3.0.0&quot;,
-  // simulator&#x6269;&#x5C55;
-  &quot;extensions&quot;: [
-    {
-      &quot;name&quot;: &quot;demo-api&quot;,
-      &quot;version&quot;: &quot;1.0.0&quot;
-    }
-  ],
-  // &#x5BBF;&#x4E3B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;,&#x5F00;&#x53D1;&#x65F6;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;
-  &quot;remote-config&quot;: {
-    &quot;name&quot;: &quot;../../../remote-config/demo.js&quot;,
-    &quot;version&quot;: &quot;1.0.0&quot;
-  }
+  &quot;name&quot;: &quot;demo&quot;,
+  &quot;appName&quot;: &quot;&#x793A;&#x4F8B;APP&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;minSwanNativeVersion&quot;: &quot;2.0.0&quot;,
+  &quot;maxSwanNativeVersion&quot;: &quot;2.2.1&quot;,
+  &quot;main&quot;: &quot;config.js&quot;
 }
-</code></pre><p>&#x5728;${hostPath}/${hostName}/program/ &#x76EE;&#x5F55;&#x4E0B;&#x65B0;&#x5EFA; config.js &#x6587;&#x4EF6;,&#x586B;&#x5199;&#x4F60;&#x7684;&#x5BBF;&#x4E3B;&#x914D;&#x7F6E;&#x3002;
-&#x5BBF;&#x4E3B;&#x914D;&#x7F6E;&#x7684;js&#x90E8;&#x5206;&#x5982;&#x4E0B;</p>
-<pre><code>export {
-    // &#x6839;&#x636E;swanNativeVersion,extensionjs&#x6765;&#x83B7;&#x53D6;&#x5BBF;&#x4E3B;app&#x7248;&#x672C;
-    getHostAppVersion: (swanNativeVersion, extensionJsVersion) =&gt; &apos;appVersion&apos;,
-    // &#x63D0;&#x4F9B;&#x5F53;&#x524D;native&#x7248;&#x672C;&#x652F;&#x6301;&#x7684;extensionJs&#x7248;&#x672C;&#x8303;&#x56F4;,&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;semver&#x8868;&#x8FBE;&#x5F0F;
-    getExtensionJsRange: (swanJsVersion, swanNativeVersion) =&gt; &apos;^1.0.0&apos;
-}
+</code></pre><ul>
+<li>&#x5728; <code>${hostPath}/${hostName}/program/</code> &#x76EE;&#x5F55;&#x4E0B; package.json &#x7684; main &#x5165;&#x53E3;&#x6587;&#x4EF6;&#x5185;&#x5BFC;&#x51FA;&#x4E0B;&#x5217;&#x65B9;&#x6CD5;</li>
+</ul>
+<pre><code>/**
+ * &#x83B7;&#x53D6;&#x5BBF;&#x4E3B; extensionJs &#x7248;&#x672C;&#x533A;&#x95F4;
+ *
+ * @param {Object=} versions &#x7248;&#x672C;&#x4FE1;&#x606F;
+ * @param {string} versions.swanJsVersion &#x5F53;&#x524D; swanJs &#x7248;&#x672C;&#x53F7;
+ * @param {string} versions.swanNativeVersion &#x5F53;&#x524D; swanNative &#x7248;&#x672C;&#x53F7;
+ * @param {string} versions.extensionJsVersion &#x5F53;&#x524D; extensionJs &#x7248;&#x672C;&#x53F7;
+ * @return {string} extensionJs semver&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x7528;&#x4E8E;&#x66F4;&#x65B0;&#x548C;&#x9009;&#x62E9;&#x7684;&#x7B5B;&#x9009;
+ */
+exports.getExtensionJsRange = (versions) =&gt; {
+    return &apos;^1.0.0&apos;;
+};
+
+
+/**
+ * &#x83B7;&#x53D6;&#x5BBF;&#x4E3B;app&#x7248;&#x672C;&#x53F7;
+ *
+ * @param {Object=} versions &#x7248;&#x672C;&#x4FE1;&#x606F;
+ * @param {string} versions.swanJsVersion &#x5F53;&#x524D; swanJs &#x7248;&#x672C;&#x53F7;
+ * @param {string} versions.swanNativeVersion &#x5F53;&#x524D; swanNative &#x7248;&#x672C;&#x53F7;
+ * @param {string} versions.extensionJsVersion &#x5F53;&#x524D; extensionJs &#x7248;&#x672C;&#x53F7;
+ * @return {string} hostAppVersion &#x5BBF;&#x4E3B;app&#x7248;&#x672C;&#x53F7;
+ */
+exports.getHostAppVersion = (versions) =&gt; {
+    return &apos;13.0.0&apos;;
+};
+
+/**
+ * &#x975E;&#x5FC5;&#x586B;&#xFF0C;&#x83B7;&#x53D6;&#x5BBF;&#x4E3B; app useragent &#x7684;&#x540E;&#x7F00;
+ *
+ * @param {Object} versions &#x540C;&#x4E0A;
+ * @return {string} suffix useragent &#x540E;&#x7F00;
+ */
+exports.getUserAgentSuffix = (versions) =&gt; {
+    return &apos;suffix&apos;
+};
 </code></pre>
                                 
                                 </section>
@@ -1750,7 +1852,7 @@ hostName&#x4F7F;&#x7528;&#x5728;&#x767E;&#x5EA6;&#x6CE8;&#x518C;&#x7684;&#x82F1;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"增加宿主配置","level":"1.5.2","depth":2,"next":{"title":"开发和调试","level":"1.5.3","depth":2,"path":"开发者工具相关/开发和调试.md","ref":"开发者工具相关/开发和调试.md","articles":[]},"previous":{"title":"开发者工具宿主接入步骤","level":"1.5.1","depth":2,"path":"开发者工具相关/README.md","ref":"开发者工具相关/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sequence"],"root":"./source","styles":{"website":"styles/website.css"},"pluginsConfig":{"sequence":{"theme":"simple"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的标题","gitbook":"*"},"file":{"path":"开发者工具相关/增加宿主配置.md","mtime":"2019-02-26T13:15:48.431Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-26T13:22:45.228Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"增加宿主配置","level":"1.5.2","depth":2,"next":{"title":"开发和调试","level":"1.5.3","depth":2,"path":"开发者工具相关/开发和调试.md","ref":"开发者工具相关/开发和调试.md","articles":[]},"previous":{"title":"开发者工具宿主接入步骤","level":"1.5.1","depth":2,"path":"开发者工具相关/README.md","ref":"开发者工具相关/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sequence"],"root":"./source","styles":{"website":"styles/website.css"},"pluginsConfig":{"sequence":{"theme":"simple"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的标题","gitbook":"*"},"file":{"path":"开发者工具相关/增加宿主配置.md","mtime":"2019-03-14T03:09:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-18T07:25:11.061Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

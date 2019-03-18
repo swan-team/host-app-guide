@@ -716,9 +716,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.1.4" data-path="../简介/小程序开源框架.html">
+        <li class="chapter " data-level="1.3.2.1.4" data-path="../简介/小程序开源框架.md">
             
-                <a href="../简介/小程序开源框架.html">
+                <span>
             
                     
                     小程序开源框架
@@ -729,9 +729,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.1.5" data-path="../简介/小程序运行时架构设计.html">
+        <li class="chapter " data-level="1.3.2.1.5" data-path="../简介/小程序运行时架构设计.md">
             
-                <a href="../简介/小程序运行时架构设计.html">
+                <span>
             
                     
                     小程序运行时架构设计
@@ -1613,6 +1613,77 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6.5" >
+            
+                <span>
+            
+                    
+                    外部接入方服务端细节指导
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.5.1" data-path="../../../server端接入/细节指导/oauth实现.html">
+            
+                <a href="../../../server端接入/细节指导/oauth实现.html">
+            
+                    
+                    oauth实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.2" data-path="../../../server端接入/细节指导/swanid机制说明.html">
+            
+                <a href="../../../server端接入/细节指导/swanid机制说明.html">
+            
+                    
+                    swanid机制说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.3" data-path="../../../server端接入/细节指导/宿主服务端接口统计.html">
+            
+                <a href="../../../server端接入/细节指导/宿主服务端接口统计.html">
+            
+                    
+                    宿主服务端接口统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.4" data-path="../../../server端接入/细节指导/授权指导.html">
+            
+                <a href="../../../server端接入/细节指导/授权指导.html">
+            
+                    
+                    授权指导
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -1730,7 +1801,9 @@
 </ul>
 <h2 id="13-&#x5F00;&#x53D1;&#x6307;&#x5357;">1.3. &#x5F00;&#x53D1;&#x6307;&#x5357;</h2>
 <h3 id="131-&#x65B0;&#x589E;&#x7AEF;&#x80FD;&#x529B;">1.3.1. &#x65B0;&#x589E;&#x7AEF;&#x80FD;&#x529B;</h3>
-<h4 id="1311-&#x3001;&#x5236;&#x5B9A;&#x7AEF;&#x80FD;&#x529B;&#x8C03;&#x8D77;&#x534F;&#x8BAE;">1.3.1.1. &#x3001;&#x5236;&#x5B9A;&#x7AEF;&#x80FD;&#x529B;&#x8C03;&#x8D77;&#x534F;&#x8BAE;</h4>
+<pre><code>&#x65B0;&#x589E;&#x7AEF;&#x80FD;&#x529B;&#xFF0C;&#x5C31;&#x662F;&#x5BBF;&#x4E3B;&#x65B9;&#x5BF9;swan core&#x672A;&#x6709;&#x7684;&#x80FD;&#x529B;&#x8FDB;&#x884C;extension&#x6269;&#x5C55;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7;extension.js&#xFF08;&#x6269;&#x5C55;&#x65B9;&#x6CD5;&#xFF09;&#x6CE8;&#x5165;&#x5230;swan core&#x4E2D;&#xFF0C;&#x5BBF;&#x4E3B;&#x7684;NA&#x7AEF;&#x9700;&#x8981;&#x5B9E;&#x73B0;extension.js&#x91CC;&#x9762;&#x5BF9;&#x5E94;&#x7684;&#x7AEF;&#x80FD;&#x529B;&#x3002;&#x5F00;&#x6E90;&#x5DE5;&#x7A0B;&#x91CC;&#x9762;&#x6709;&#x4E00;&#x4E2A;BBAMNPPyramid.bundle&#x6587;&#x4EF6;&#xFF0C;&#x91CC;&#x9762;&#x5305;&#x542B;&#x4E86;extension.js&#x5305;&#xFF0C;&#x5982;&#x679C;&#x5BBF;&#x4E3B;&#x9700;&#x8981;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x9700;&#x8981;&#x66FF;&#x6362;&#x8FD9;&#x4E2A;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x3002;
+</code></pre><p>&#x524D;&#x7AEF;&#x7684;<a href="http://icode.baidu.com/repos/baidu/baiduapp/host-access-docs/blob/master:source/&#x524D;&#x7AEF;swan.js&#x63A5;&#x5165;/&#x5982;&#x4F55;&#x8FDB;&#x884C;&#x6269;&#x5C55;.md" target="_blank">extension&#x6269;&#x5C55;&#x6587;&#x6863;</a></p>
+<h4 id="1311-&#x5236;&#x5B9A;&#x7AEF;&#x80FD;&#x529B;&#x8C03;&#x8D77;&#x534F;&#x8BAE;">1.3.1.1. &#x5236;&#x5B9A;&#x7AEF;&#x80FD;&#x529B;&#x8C03;&#x8D77;&#x534F;&#x8BAE;</h4>
 <h5 id="13111-&#x5BA2;&#x6237;&#x7AEF;&#x8C03;&#x8D77;&#x534F;&#x8BAE;&#x5B9A;&#x4F4D;">1.3.1.1.1. &#x5BA2;&#x6237;&#x7AEF;&#x8C03;&#x8D77;&#x534F;&#x8BAE;&#x5B9A;&#x4F4D;</h5>
 <ul>
 <li>Scheme &#x5BF9;NA&#x7EC4;&#x4EF6;&#x6216;&#x6A21;&#x5757;&#x80FD;&#x529B;&#x7684;&#x5305;&#x88C5;&#x5668;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x4EE5;&#x7EC4;&#x4EF6;&#x6216;&#x6A21;&#x5757;&#x4E3A;&#x5355;&#x4F4D;&#x5C01;&#x88C5;&#xFF1B;H5&#x4E0E;NA&#x4EE5;&#x7EC4;&#x4EF6;&#x6216;&#x6A21;&#x5757;&#x4E3A;&#x5355;&#x4F4D;&#x901A;&#x4FE1;</li>
@@ -1877,7 +1950,7 @@ NSString *jsMethod = [[dispatcher.optionsDict objectForKey:BBASwanPluginKeyCallB
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"端能力扩展","level":"1.3.2.2.4","depth":4,"next":{"title":"小程序框架提供给宿主的API","level":"1.3.2.3","depth":3,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/README.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/README.md","articles":[{"title":"SWAN Authorize Protocol","level":"1.3.2.3.1","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANAuthorizeProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANAuthorizeProtocol.md","articles":[]},{"title":"SWAN Component Touch Util Protocol","level":"1.3.2.3.2","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANComponentTouchUtilProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANComponentTouchUtilProtocol.md","articles":[]},{"title":"SWAN Dialog Protocol","level":"1.3.2.3.3","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANDialogProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANDialogProtocol.md","articles":[]},{"title":"SWAN Mes View Dialog Protocol","level":"1.3.2.3.4","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANMesViewDialogProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANMesViewDialogProtocol.md","articles":[]},{"title":"SWAN Service Protocol","level":"1.3.2.3.5","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANServiceProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANServiceProtocol.md","articles":[]},{"title":"SWAN Sub Directory Manager Protocol","level":"1.3.2.3.6","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANSubDirectoryManagerProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANSubDirectoryManagerProtocol.md","articles":[]},{"title":"SWANUI Plugin Util Protocol","level":"1.3.2.3.7","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANUIPluginUtilProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANUIPluginUtilProtocol.md","articles":[]},{"title":"SWAN Utilities Protocol","level":"1.3.2.3.8","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANUtilitiesProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANUtilitiesProtocol.md","articles":[]},{"title":"SWAN Web View Navigation Protocol","level":"1.3.2.3.9","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANWebViewNavigationProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANWebViewNavigationProtocol.md","articles":[]},{"title":"打点统计","level":"1.3.2.3.10","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/打点统计.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/打点统计.md","articles":[]},{"title":"生命周期","level":"1.3.2.3.11","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/生命周期.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/生命周期.md","articles":[]},{"title":"预加载","level":"1.3.2.3.12","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/预加载.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/预加载.md","articles":[]}]},"previous":{"title":"百度外部接入","level":"1.3.2.2.3","depth":4,"path":"客户端swan-native接入/iOS/接入步骤说明/百度外部接入.md","ref":"客户端swan-native接入/iOS/接入步骤说明/百度外部接入.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sequence"],"root":"./source","styles":{"website":"styles/website.css"},"pluginsConfig":{"sequence":{"theme":"simple"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的标题","gitbook":"*"},"file":{"path":"客户端swan-native接入/iOS/接入步骤说明/端能力扩展.md","mtime":"2019-02-26T13:15:48.349Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-26T13:22:45.228Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"端能力扩展","level":"1.3.2.2.4","depth":4,"next":{"title":"小程序框架提供给宿主的API","level":"1.3.2.3","depth":3,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/README.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/README.md","articles":[{"title":"SWAN Authorize Protocol","level":"1.3.2.3.1","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANAuthorizeProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANAuthorizeProtocol.md","articles":[]},{"title":"SWAN Component Touch Util Protocol","level":"1.3.2.3.2","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANComponentTouchUtilProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANComponentTouchUtilProtocol.md","articles":[]},{"title":"SWAN Dialog Protocol","level":"1.3.2.3.3","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANDialogProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANDialogProtocol.md","articles":[]},{"title":"SWAN Mes View Dialog Protocol","level":"1.3.2.3.4","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANMesViewDialogProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANMesViewDialogProtocol.md","articles":[]},{"title":"SWAN Service Protocol","level":"1.3.2.3.5","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANServiceProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANServiceProtocol.md","articles":[]},{"title":"SWAN Sub Directory Manager Protocol","level":"1.3.2.3.6","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANSubDirectoryManagerProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANSubDirectoryManagerProtocol.md","articles":[]},{"title":"SWANUI Plugin Util Protocol","level":"1.3.2.3.7","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANUIPluginUtilProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANUIPluginUtilProtocol.md","articles":[]},{"title":"SWAN Utilities Protocol","level":"1.3.2.3.8","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANUtilitiesProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANUtilitiesProtocol.md","articles":[]},{"title":"SWAN Web View Navigation Protocol","level":"1.3.2.3.9","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANWebViewNavigationProtocol.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/SWANWebViewNavigationProtocol.md","articles":[]},{"title":"打点统计","level":"1.3.2.3.10","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/打点统计.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/打点统计.md","articles":[]},{"title":"生命周期","level":"1.3.2.3.11","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/生命周期.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/生命周期.md","articles":[]},{"title":"预加载","level":"1.3.2.3.12","depth":4,"path":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/预加载.md","ref":"客户端swan-native接入/iOS/小程序框架提供给宿主的API/预加载.md","articles":[]}]},"previous":{"title":"百度外部接入","level":"1.3.2.2.3","depth":4,"path":"客户端swan-native接入/iOS/接入步骤说明/百度外部接入.md","ref":"客户端swan-native接入/iOS/接入步骤说明/百度外部接入.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sequence"],"root":"./source","styles":{"website":"styles/website.css"},"pluginsConfig":{"sequence":{"theme":"simple"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的标题","gitbook":"*"},"file":{"path":"客户端swan-native接入/iOS/接入步骤说明/端能力扩展.md","mtime":"2019-03-18T06:06:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-18T07:25:11.061Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
