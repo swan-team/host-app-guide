@@ -47,7 +47,7 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="小程序开源框架.html" />
+    <link rel="next" href="小程序开源框架.md" />
     
     
     <link rel="prev" href="小程序依赖三方库.html" />
@@ -716,9 +716,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.1.4" data-path="小程序开源框架.html">
+        <li class="chapter " data-level="1.3.2.1.4" data-path="小程序开源框架.md">
             
-                <a href="小程序开源框架.html">
+                <span>
             
                     
                     小程序开源框架
@@ -729,9 +729,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.1.5" data-path="小程序运行时架构设计.html">
+        <li class="chapter " data-level="1.3.2.1.5" data-path="小程序运行时架构设计.md">
             
-                <a href="小程序运行时架构设计.html">
+                <span>
             
                     
                     小程序运行时架构设计
@@ -1613,6 +1613,77 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6.5" >
+            
+                <span>
+            
+                    
+                    外部接入方服务端细节指导
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.5.1" data-path="../../../server端接入/细节指导/oauth实现.html">
+            
+                <a href="../../../server端接入/细节指导/oauth实现.html">
+            
+                    
+                    oauth实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.2" data-path="../../../server端接入/细节指导/swanid机制说明.html">
+            
+                <a href="../../../server端接入/细节指导/swanid机制说明.html">
+            
+                    
+                    swanid机制说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.3" data-path="../../../server端接入/细节指导/宿主服务端接口统计.html">
+            
+                <a href="../../../server端接入/细节指导/宿主服务端接口统计.html">
+            
+                    
+                    宿主服务端接口统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.4" data-path="../../../server端接入/细节指导/授权指导.html">
+            
+                <a href="../../../server端接入/细节指导/授权指导.html">
+            
+                    
+                    授权指导
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -1680,12 +1751,10 @@
 <ul>
 <li><a href="#1-&#x5C0F;&#x7A0B;&#x5E8F;&#x5E93;&#x5927;&#x5C0F;&#x7EDF;&#x8BA1;">1. &#x5C0F;&#x7A0B;&#x5E8F;&#x5E93;&#x5927;&#x5C0F;&#x7EDF;&#x8BA1;</a><ul>
 <li><a href="#11-&#x6587;&#x6863;&#x7248;&#x672C;">1.1. &#x6587;&#x6863;&#x7248;&#x672C;</a></li>
-<li><a href="#12-&#x529F;&#x80FD;&#x8BF4;&#x660E;">1.2. &#x529F;&#x80FD;&#x8BF4;&#x660E;</a></li>
-<li><a href="#13-&#x5F00;&#x53D1;&#x6307;&#x5357;">1.3. &#x5F00;&#x53D1;&#x6307;&#x5357;</a><ul>
-<li><a href="#131-&#x5C0F;&#x7A0B;&#x5E8F;&#x5927;&#x5C0F;&#x7EDF;&#x8BA1;-&#x5168;&#x90E8;&#x662F;&#x9759;&#x6001;&#x5E93;">1.3.1. &#x5C0F;&#x7A0B;&#x5E8F;&#x5927;&#x5C0F;&#x7EDF;&#x8BA1; &#xFF08;&#x5168;&#x90E8;&#x662F;&#x9759;&#x6001;&#x5E93;&#xFF09;</a><ul>
-<li><a href="#1311-&#x5C0F;&#x7A0B;&#x5E8F;&#x5F00;&#x6E90;&#x5E93;&#x53CA;&#x4F9D;&#x8D56;&#x5E93;&#x4F53;&#x79EF;&#x4EE3;&#x7801;&#x8D44;&#x6E90;&#x5217;&#x8868;">1.3.1.1. &#x5C0F;&#x7A0B;&#x5E8F;&#x5F00;&#x6E90;&#x5E93;&#x53CA;&#x4F9D;&#x8D56;&#x5E93;&#x4F53;&#x79EF;&#xFF08;&#x4EE3;&#x7801;+&#x8D44;&#x6E90;&#xFF09;&#x5217;&#x8868;&#xFF1A;</a></li>
-</ul>
-</li>
+<li><a href="#12-&#x5305;&#x4F53;&#x79EF;&#x7EDF;&#x8BA1;">1.2. &#x5305;&#x4F53;&#x79EF;&#x7EDF;&#x8BA1;</a><ul>
+<li><a href="#&#x5C0F;&#x7A0B;&#x5E8F;&#x5F00;&#x6E90;&#x5E93;&#x5305;&#x4F53;&#x79EF;&#x603B;&#x89C8;">1.2.1. &#x5C0F;&#x7A0B;&#x5E8F;&#x5F00;&#x6E90;&#x5E93;&#x5305;&#x4F53;&#x79EF;&#x603B;&#x89C8;</a></li>
+<li><a href="#122-&#x4EE3;&#x7801;&#xFF08;LinkMap&#xFF09;&#x7EC6;&#x5206;">1.2.2. &#x4EE3;&#x7801;&#xFF08;LinkMap&#xFF09;&#x7EC6;&#x5206;</a></li>
+<li><a href="#122-&#x5185;&#x5916;&#x90E8;&#x5E93;&#x5217;&#x8868;">1.2.3. &#x5185;&#x5916;&#x90E8;&#x5E93;&#x5217;&#x8868;</a></li>
 </ul>
 </li>
 </ul>
@@ -1699,203 +1768,336 @@
 <tr>
 <th style="text-align:left">&#x6587;&#x6863;&#x7248;&#x672C;</th>
 <th style="text-align:left">&#x4FEE;&#x6539;&#x65E5;&#x671F;</th>
-<th style="text-align:left">&#x4FEE;&#x6539;&#x6982;&#x8FF0;</th>
+<th style="text-align:left">&#x4FEE;&#x6539;&#x6982;&#x8FF0;&#xFF08;&#x5BF9;&#x5E94;SDK&#x7248;&#x672C;&#xFF09;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left">0.8</td>
 <td style="text-align:left">2018-12-10</td>
-<td style="text-align:left">&#x521D;&#x59CB;&#x7248;&#x672C;</td>
+<td style="text-align:left">2.0.5</td>
+</tr>
+<tr>
+<td style="text-align:left">0.9</td>
+<td style="text-align:left">2019-03-14</td>
+<td style="text-align:left">2.2.0</td>
 </tr>
 </tbody>
 </table>
 <hr>
-<h2 id="12-&#x529F;&#x80FD;&#x8BF4;&#x660E;">1.2. &#x529F;&#x80FD;&#x8BF4;&#x660E;</h2>
-<h2 id="13-&#x5F00;&#x53D1;&#x6307;&#x5357;">1.3. &#x5F00;&#x53D1;&#x6307;&#x5357;</h2>
-<h3 id="131-&#x5C0F;&#x7A0B;&#x5E8F;&#x5927;&#x5C0F;&#x7EDF;&#x8BA1;-&#xFF08;&#x5168;&#x90E8;&#x662F;&#x9759;&#x6001;&#x5E93;&#xFF09;">1.3.1. &#x5C0F;&#x7A0B;&#x5E8F;&#x5927;&#x5C0F;&#x7EDF;&#x8BA1; &#xFF08;&#x5168;&#x90E8;&#x662F;&#x9759;&#x6001;&#x5E93;&#xFF09;</h3>
-<h4 id="1311-&#x5C0F;&#x7A0B;&#x5E8F;&#x5F00;&#x6E90;&#x5E93;&#x53CA;&#x4F9D;&#x8D56;&#x5E93;&#x4F53;&#x79EF;&#xFF08;&#x4EE3;&#x7801;&#x8D44;&#x6E90;&#xFF09;&#x5217;&#x8868;&#xFF1A;">1.3.1.1. &#x5C0F;&#x7A0B;&#x5E8F;&#x5F00;&#x6E90;&#x5E93;&#x53CA;&#x4F9D;&#x8D56;&#x5E93;&#x4F53;&#x79EF;&#xFF08;&#x4EE3;&#x7801;+&#x8D44;&#x6E90;&#xFF09;&#x5217;&#x8868;&#xFF1A;</h4>
-<pre><code>1.&#x5185;&#x90E8;&#x5E93;&#x603B;&#x8BA1;&#xFF1A;6886.09 KB &#xFF08;3809.28 + 3076.81&#xFF09;
-2.&#x5916;&#x90E8;&#x5E93;&#x603B;&#x8BA1;&#xFF1A;1562.64KB
-&#x603B;&#x8BA1;&#xFF1A;8448.73KB&#xFF0C;
-&#x6309;&#x7167;&#x624B;&#x767E;&#x57FA;&#x7840;&#x7AEF;&#x63D0;&#x4F9B;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x771F;&#x5B9E;&#x96C6;&#x6210;&#x5230;release&#x4E0B;&#x7684;&#x5305;&#x4F53;&#x79EF;&#xFF1A;8448.73 *&#xFF08;1+1/7&#xFF09;= 9655.69KB
+<h2 id="12-&#x5305;&#x4F53;&#x79EF;&#x7EDF;&#x8BA1;">1.2. &#x5305;&#x4F53;&#x79EF;&#x7EDF;&#x8BA1;</h2>
+<h3 id="121-&#x5C0F;&#x7A0B;&#x5E8F;&#x5F00;&#x6E90;&#x5E93;&#x5305;&#x4F53;&#x79EF;&#x603B;&#x89C8;">1.2.1 &#x5C0F;&#x7A0B;&#x5E8F;&#x5F00;&#x6E90;&#x5E93;&#x5305;&#x4F53;&#x79EF;&#x603B;&#x89C8;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x5305;&#x540D;</th>
+<th style="text-align:center">&#x603B;&#x8BA1;&#xFF08;2.2.0&#xFF09;</th>
+<th style="text-align:center">&#x603B;&#x8BA1;&#xFF08;2.0.5&#xFF09;</th>
+<th style="text-align:center">diff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>SDK&#xFF08;&#x603B;&#x8BA1;&#xFF09;</strong></td>
+<td style="text-align:center"><font color="red"> 9272.57</font></td>
+<td style="text-align:center"><font color="red"> 8448.73</font></td>
+<td style="text-align:center"><font color="red"> 823.84</font></td>
+</tr>
+<tr>
+<td style="text-align:center">&#x4EE3;&#x7801;&#xFF08;LinkMap&#xFF09;</td>
+<td style="text-align:center">7879.4</td>
+<td style="text-align:center">7118.03</td>
+<td style="text-align:center"><font color="red"> 761.37</font></td>
+</tr>
+<tr>
+<td style="text-align:center">&#x8D44;&#x6E90;(&#x56FE;&#x7247;&#x3001;&#x6587;&#x4EF6;)</td>
+<td style="text-align:center">1393.17</td>
+<td style="text-align:center">1330.7</td>
+<td style="text-align:center"><font color="red"> 62.47</font></td>
+</tr>
+</tbody>
+</table>
+<h3 id="122-&#x4EE3;&#x7801;&#xFF08;linkmap&#xFF09;&#x7EC6;&#x5206;">1.2.2 &#x4EE3;&#x7801;&#xFF08;LinkMap&#xFF09;&#x7EC6;&#x5206;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x5305;&#x540D;</th>
+<th style="text-align:center">&#x603B;&#x8BA1;&#xFF08;2.2.0&#xFF09;</th>
+<th style="text-align:center">&#x603B;&#x8BA1;&#xFF08;2.0.5&#xFF09;</th>
+<th style="text-align:center">diff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&#x5185;&#x90E8;&#x5E93;</td>
+<td style="text-align:center">6027.11</td>
+<td style="text-align:center">5555.39</td>
+<td style="text-align:center"><font color="red"> 471.72</font></td>
+</tr>
+<tr>
+<td style="text-align:center">&#x5F00;&#x6E90;&#x5E93;</td>
+<td style="text-align:center">1852.29</td>
+<td style="text-align:center">1562.64</td>
+<td style="text-align:center"><font color="red"> 289.65</font></td>
+</tr>
+</tbody>
+</table>
+<h3 id="123-&#x5185;&#x5916;&#x90E8;&#x5E93;&#x5217;&#x8868;">1.2.3 &#x5185;&#x5916;&#x90E8;&#x5E93;&#x5217;&#x8868;</h3>
+<pre><code>&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#xFF1A;
+1.&#x6309;&#x7167;&#x624B;&#x767E;&#x57FA;&#x7840;&#x7AEF;&#x63D0;&#x4F9B;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x771F;&#x5B9E;&#x96C6;&#x6210;&#x5230;release&#x4E0B;&#x7684;&#x5305;&#x4F53;&#x79EF;&#xFF1A;9272.57 *&#xFF08;1+1/7&#xFF09;= 10597.22 KB
+2.&#x5185;&#x90E8;&#x5E93;&#x5305;&#x4F53;&#x79EF;&#x603B;&#x8BA1;&#xFF1A;7420.28KB &#xFF08;&#x4EE3;&#x7801;&#xFF1A;6034.35 + &#x8D44;&#x6E90;1386.55&#xFF09;
+3.&#x5916;&#x90E8;&#x5F00;&#x6E90;&#x5E93;&#x5305;&#x4F53;&#x79EF;&#x603B;&#x8BA1;&#xFF1A;1852.29KB
+4.&#x5C0F;&#x7A0B;&#x5E8F;&#x4F9D;&#x8D56;&#x5185;&#x90E8;&#x5E93;&#xFF0C;2.2.0&#x76F8;&#x6BD4;2.0.5&#x65B0;&#x589E;8&#x4E2A;&#x5E93;&#xFF08;&#x4E0E;&#x7F51;&#x8DEF;&#x76F8;&#x5173;&#x7684;&#x5E93;10&#x4E2A;&#xFF0C;&#x9700;&#x8981;&#x4F18;&#x5316;&#xFF09;&#xFF1B;
+5.&#x5916;&#x90E8;&#x5F00;&#x6E90;&#x5E93;&#x6709;&#x66F4;&#x65B0;&#xFF0C;&#x603B;&#x4F53;&#x79EF;&#x65B0;&#x589E;289.65KB&#xFF1B;
+6.&#x53BB;&#x6389;&#x591A;&#x4F59;&#x8D44;&#x6E90;&#x540E;&#xFF0C;&#x5927;&#x81F4;&#x4E0E;2.0.5&#x5305;&#x4F53;&#x79EF;&#x76F8;&#x7B49;&#xFF1B;
 </code></pre><table>
 <thead>
 <tr>
 <th style="text-align:center">library name</th>
 <th style="text-align:center">dependence level</th>
 <th style="text-align:center">source</th>
-<th style="text-align:center">library size&#xFF08;KB&#xFF09;</th>
+<th style="text-align:center">size&#xFF08;KB&#xFF09;2.0.5</th>
+<th style="text-align:center">size&#xFF08;KB&#xFF09;2.2.0</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">libSWAN</td>
+<td style="text-align:center">libSWAN(&#x5C0F;&#x7A0B;&#x5E8F;&amp;&#x5C0F;&#x6E38;&#x620F;SDK)</td>
 <td style="text-align:center"></td>
 <td style="text-align:center">&#x5F00;&#x6E90;</td>
-<td style="text-align:center"><font color="red"> 3809.28</font></td>
+<td style="text-align:center"><font color="red"> 3809.28 (922.7)</font></td>
+<td style="text-align:center"><font color="red"> 4638.72 (1034.24)</font></td>
 </tr>
 <tr>
-<td style="text-align:center"><font color="red"> BBASchemeDispatcher</font></td>
+<td style="text-align:center">BBASchemeDispatcher</td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
 <td style="text-align:center">&#x5185;&#x90E8;</td>
 <td style="text-align:center">91.74</td>
+<td style="text-align:center">87.65</td>
 </tr>
 <tr>
-<td style="text-align:center"><font color="red"> Pyramid</font></td>
+<td style="text-align:center">Pyramid</td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
 <td style="text-align:center">&#x5185;&#x90E8;</td>
 <td style="text-align:center">51.97</td>
+<td style="text-align:center">52.66</td>
 </tr>
 <tr>
-<td style="text-align:center"><font color="red"> ApsManager</font></td>
+<td style="text-align:center">ApsManager</td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
-<td style="text-align:center">&#x5185;&#x90E8;</td>
+<td style="text-align:center">&#x5185;&#x90E8;&#xFF08;&#x540E;&#x671F;&#x5E9F;&#x5F03;&#xFF09;</td>
 <td style="text-align:center">252.09</td>
+<td style="text-align:center">223.17</td>
 </tr>
 <tr>
-<td style="text-align:center"><font color="red"> BBAUpdate</font></td>
+<td style="text-align:center">BBAUpdate</td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
-<td style="text-align:center">&#x5185;&#x90E8;</td>
-<td style="text-align:center">22.02</td>
+<td style="text-align:center">&#x5185;&#x90E8;&#xFF08;&#x540E;&#x671F;&#x5E9F;&#x5F03;&#xFF09;</td>
+<td style="text-align:center">22.02&#xFF08;6.62&#xFF09;</td>
+<td style="text-align:center">30.25&#xFF08;6.62&#xFF09;</td>
 </tr>
 <tr>
-<td style="text-align:center"><font color="red"> BBAFoundation</font></td>
+<td style="text-align:center">BBAFoundation</td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
 <td style="text-align:center">&#x5185;&#x90E8;</td>
 <td style="text-align:center">306.63</td>
+<td style="text-align:center">149.5</td>
 </tr>
 <tr>
-<td style="text-align:center"><font color="red"> BBAUIKit</font></td>
+<td style="text-align:center">BBAUIKit</td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
-<td style="text-align:center">&#x5185;&#x90E8;</td>
-<td style="text-align:center"><font color="red"> 2129.92</font></td>
+<td style="text-align:center">&#x5185;&#x90E8; &#xFF08;UI&#xFF09;</td>
+<td style="text-align:center"><font color="red"> 2129.92&#xFF08;401.38&#xFF09;</font></td>
+<td style="text-align:center"><font color="red"> 1648.64&#xFF08;352.31&#xFF09;</font></td>
 </tr>
 <tr>
-<td style="text-align:center"><font color="red"> BBACommonCrypto</font></td>
+<td style="text-align:center">BBAImageView</td>
+<td style="text-align:center"><font color="SpringGreen"> &#x4E8C;&#x7EA7;</font></td>
+<td style="text-align:center">&#x5185;&#x90E8; &#xFF08;UI&#xFF09;</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">15.31</td>
+</tr>
+<tr>
+<td style="text-align:center">BBAUICategoryies</td>
+<td style="text-align:center">&#x4E00;&#x7EA7;</td>
+<td style="text-align:center">&#x5185;&#x90E8; &#xFF08;UI&#xFF09;</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">21.51</td>
+</tr>
+<tr>
+<td style="text-align:center">BBAUIKitPlugin</td>
+<td style="text-align:center">&#x4E00;&#x7EA7;</td>
+<td style="text-align:center">&#x5185;&#x90E8; &#xFF08;UI&#xFF09;</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">26.21</td>
+</tr>
+<tr>
+<td style="text-align:center">BBACommonCrypto</td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
 <td style="text-align:center">&#x5185;&#x90E8;</td>
 <td style="text-align:center">39.18</td>
+<td style="text-align:center">41.14</td>
 </tr>
 <tr>
-<td style="text-align:center"><font color="red"> BBANetwork</font></td>
+<td style="text-align:center">BoxKit</td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
-<td style="text-align:center">&#x5185;&#x90E8;</td>
-<td style="text-align:center">12.25</td>
+<td style="text-align:center">&#x5185;&#x90E8;&#xFF08;&#x767E;&#x5EA6;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#xFF1A;&#x540E;&#x671F;&#x5E9F;&#x5F03;&#xFF09;</td>
+<td style="text-align:center">20.64</td>
+<td style="text-align:center">21.48</td>
 </tr>
 <tr>
-<td style="text-align:center"><font color="red"> BBAAPIRequest</font></td>
+<td style="text-align:center">UBC</td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
-<td style="text-align:center">&#x5185;&#x90E8;</td>
-<td style="text-align:center">122.36</td>
+<td style="text-align:center">&#x5185;&#x90E8;&#xFF08;&#x540E;&#x671F;&#x5E9F;&#x5F03;&#xFF09;</td>
+<td style="text-align:center">202.28</td>
+<td style="text-align:center">204.08</td>
 </tr>
 <tr>
-<td style="text-align:center"><font color="red"> BBADownloader</font></td>
+<td style="text-align:center">BaiduB64OC</td>
+<td style="text-align:center"><font color="SpringGreen"> &#x4E8C;&#x7EA7;</font></td>
+<td style="text-align:center">&#x5185;&#x90E8;</td>
+<td style="text-align:center">1.4</td>
+<td style="text-align:center">1.4</td>
+</tr>
+<tr>
+<td style="text-align:center">Storage</td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
 <td style="text-align:center">&#x5185;&#x90E8;</td>
+<td style="text-align:center">32.59</td>
+<td style="text-align:center">32.62</td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="green"> BBADownloader</font></td>
+<td style="text-align:center">&#x4E00;&#x7EA7;</td>
+<td style="text-align:center">&#x5185;&#x90E8; &#xFF08;&#x7F51;&#x7EDC;&#xFF09;</td>
 <td style="text-align:center"></td>
+<td style="text-align:center">51.28</td>
 </tr>
 <tr>
-<td style="text-align:center">AFNetworking</td>
+<td style="text-align:center"><font color="green"> BBAAPIRequest</font></td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
-<td style="text-align:center">&#x5916;&#x90E8;</td>
+<td style="text-align:center">&#x5185;&#x90E8; &#xFF08;&#x7F51;&#x7EDC;&#xFF09;</td>
+<td style="text-align:center">122.36</td>
+<td style="text-align:center">129.41</td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="green"> BBANetwork</font></td>
+<td style="text-align:center">&#x4E00;&#x7EA7;</td>
+<td style="text-align:center">&#x5185;&#x90E8; &#xFF08;&#x7F51;&#x7EDC;&#xFF09;</td>
+<td style="text-align:center">12.25</td>
+<td style="text-align:center">10.64</td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="green"> Network</font></td>
+<td style="text-align:center"><font color="SpringGreen"> &#x4E8C;&#x7EA7;</font></td>
+<td style="text-align:center">&#x5185;&#x90E8; &#xFF08;&#x7F51;&#x7EDC;&#xFF09;</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">7.09</td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="green"> Common</font></td>
+<td style="text-align:center"><font color="SpringGreen"> &#x4E8C;&#x7EA7;</font></td>
+<td style="text-align:center">&#x5185;&#x90E8; &#xFF08;&#x7F51;&#x7EDC;&#xFF09;</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">10.29</td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="green"> Sdt</font></td>
+<td style="text-align:center"><font color="SpringGreen">  &#x4E8C;&#x7EA7;</font></td>
+<td style="text-align:center">&#x5185;&#x90E8; &#xFF08;&#x7F51;&#x7EDC;&#xFF09;</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">16.81</td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="green"> DNSChecker</font></td>
+<td style="text-align:center"><font color="SpringGreen"> &#x4E8C;&#x7EA7;</font></td>
+<td style="text-align:center">&#x5185;&#x90E8; &#xFF08;&#x7F51;&#x7EDC;&#xFF09;</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.52</td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="green"> AFNetworking</font></td>
+<td style="text-align:center"><font color="SpringGreen">  &#x4E8C;&#x7EA7;</font></td>
+<td style="text-align:center">&#x5916;&#x90E8; &#xFF08;&#x7F51;&#x7EDC;&#xFF09;</td>
 <td style="text-align:center">206.39</td>
+<td style="text-align:center">205.66</td>
 </tr>
 <tr>
-<td style="text-align:center">Reachability</td>
+<td style="text-align:center"><font color="green"> Reachability</font></td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
-<td style="text-align:center">&#x5916;&#x90E8;</td>
+<td style="text-align:center">&#x5916;&#x90E8; &#xFF08;&#x7F51;&#x7EDC;&#xFF09;</td>
 <td style="text-align:center">2.79</td>
+<td style="text-align:center">2.67</td>
+</tr>
+<tr>
+<td style="text-align:center"><font color="green"> SocketRocket</font></td>
+<td style="text-align:center"><font color="SpringGreen">  &#x4E8C;&#x7EA7;</font></td>
+<td style="text-align:center">&#x5916;&#x90E8; &#xFF08;&#x7F51;&#x7EDC;&#xFF09;</td>
+<td style="text-align:center">73.48</td>
+<td style="text-align:center">72.12</td>
 </tr>
 <tr>
 <td style="text-align:center">SDWebImage</td>
-<td style="text-align:center">&#x4E00;&#x7EA7;</td>
+<td style="text-align:center">&#x4E00;(&#x4E8C;)&#x7EA7;</td>
 <td style="text-align:center">&#x5916;&#x90E8;</td>
 <td style="text-align:center">173.88</td>
+<td style="text-align:center">174.44</td>
+</tr>
+<tr>
+<td style="text-align:center">WebP</td>
+<td style="text-align:center"><font color="SpringGreen"> &#x4E8C;&#x7EA7;</font></td>
+<td style="text-align:center">&#x5916;&#x90E8;</td>
+<td style="text-align:center">325.79</td>
+<td style="text-align:center">326.2</td>
 </tr>
 <tr>
 <td style="text-align:center">Masonry</td>
-<td style="text-align:center">&#x4E00;&#x7EA7;</td>
+<td style="text-align:center">&#x4E00;(&#x4E8C;)&#x7EA7;</td>
 <td style="text-align:center">&#x5916;&#x90E8;</td>
 <td style="text-align:center">42.75</td>
+<td style="text-align:center">42.34</td>
 </tr>
 <tr>
 <td style="text-align:center">Lottie</td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
 <td style="text-align:center">&#x5916;&#x90E8;</td>
 <td style="text-align:center">8.03</td>
+<td style="text-align:center">234.16</td>
 </tr>
 <tr>
 <td style="text-align:center">YYCache</td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
-<td style="text-align:center">&#x5916;&#x90E8;</td>
+<td style="text-align:center">&#x5916;&#x90E8;&#xFF08;&#x540E;&#x7EED;&#x53EF;&#x5254;&#x9664;&#xFF09;</td>
 <td style="text-align:center">63.6</td>
+<td style="text-align:center">63.22</td>
 </tr>
 <tr>
 <td style="text-align:center">FMDatabase</td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
 <td style="text-align:center">&#x5916;&#x90E8;</td>
 <td style="text-align:center">51.49</td>
+<td style="text-align:center">51.38</td>
 </tr>
 <tr>
 <td style="text-align:center">Ejecta</td>
 <td style="text-align:center">&#x4E00;&#x7EA7;</td>
 <td style="text-align:center">&#x5916;&#x90E8;</td>
 <td style="text-align:center">419.12</td>
-</tr>
-<tr>
-<td style="text-align:center">ZipArchive</td>
-<td style="text-align:center">&#x4E00;&#x7EA7;</td>
-<td style="text-align:center">&#x5916;&#x90E8;</td>
-<td style="text-align:center">105.41</td>
-</tr>
-<tr>
-<td style="text-align:center"><font color="red"> CuidSDK</font></td>
-<td style="text-align:center">&#x4E8C;&#x7EA7;</td>
-<td style="text-align:center">&#x5185;&#x90E8;</td>
-<td style="text-align:center">9.84</td>
-</tr>
-<tr>
-<td style="text-align:center"><font color="red"> BaiduB64OC</font></td>
-<td style="text-align:center">&#x4E8C;&#x7EA7;</td>
-<td style="text-align:center">&#x5185;&#x90E8;</td>
-<td style="text-align:center">6.22</td>
-</tr>
-<tr>
-<td style="text-align:center"><font color="red"> Storage</font></td>
-<td style="text-align:center">&#x4E8C;&#x7EA7;</td>
-<td style="text-align:center">&#x5185;&#x90E8;</td>
-<td style="text-align:center">32.59</td>
-</tr>
-<tr>
-<td style="text-align:center">SocketRocket</td>
-<td style="text-align:center">&#x4E8C;&#x7EA7;</td>
-<td style="text-align:center">&#x5916;&#x90E8;</td>
-<td style="text-align:center">73.48</td>
+<td style="text-align:center">593.82</td>
 </tr>
 <tr>
 <td style="text-align:center">MJRefresh</td>
-<td style="text-align:center">&#x4E8C;&#x7EA7;</td>
+<td style="text-align:center">&#x4E00;&#x7EA7;</td>
 <td style="text-align:center">&#x5916;&#x90E8;</td>
 <td style="text-align:center">63.3</td>
+<td style="text-align:center">62.95</td>
 </tr>
 <tr>
 <td style="text-align:center">MBProgressHUD</td>
-<td style="text-align:center">&#x4E8C;&#x7EA7;</td>
+<td style="text-align:center">&#x4E00;&#x7EA7;</td>
 <td style="text-align:center">&#x5916;&#x90E8;</td>
 <td style="text-align:center">25.57</td>
-</tr>
-<tr>
-<td style="text-align:center">RIButtonItem</td>
-<td style="text-align:center">&#x4E8C;&#x7EA7;</td>
-<td style="text-align:center">&#x5916;&#x90E8;</td>
-<td style="text-align:center">1.04</td>
-</tr>
-<tr>
-<td style="text-align:center">WebP</td>
-<td style="text-align:center">&#x4E8C;&#x7EA7;</td>
-<td style="text-align:center">&#x5916;&#x90E8;</td>
-<td style="text-align:center">325.79</td>
+<td style="text-align:center">23.33</td>
 </tr>
 </tbody>
 </table>
@@ -1932,7 +2134,7 @@
                 </a>
                 
                 
-                <a href="小程序开源框架.html" class="navigation navigation-next " aria-label="Next page: 小程序开源框架">
+                <a href="小程序开源框架.md" class="navigation navigation-next " aria-label="Next page: 小程序开源框架">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1943,7 +2145,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"小程序库大小统计","level":"1.3.2.1.3","depth":4,"next":{"title":"小程序开源框架","level":"1.3.2.1.4","depth":4,"path":"客户端swan-native接入/iOS/简介/小程序开源框架.md","ref":"客户端swan-native接入/iOS/简介/小程序开源框架.md","articles":[]},"previous":{"title":"小程序依赖三方库","level":"1.3.2.1.2","depth":4,"path":"客户端swan-native接入/iOS/简介/小程序依赖三方库.md","ref":"客户端swan-native接入/iOS/简介/小程序依赖三方库.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sequence"],"root":"./source","styles":{"website":"styles/website.css"},"pluginsConfig":{"sequence":{"theme":"simple"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的标题","gitbook":"*"},"file":{"path":"客户端swan-native接入/iOS/简介/小程序库大小统计.md","mtime":"2019-02-26T13:15:48.366Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-26T13:22:45.228Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"小程序库大小统计","level":"1.3.2.1.3","depth":4,"next":{"title":"小程序开源框架","level":"1.3.2.1.4","depth":4,"path":"客户端swan-native接入/iOS/简介/小程序开源框架.md","ref":"客户端swan-native接入/iOS/简介/小程序开源框架.md","articles":[]},"previous":{"title":"小程序依赖三方库","level":"1.3.2.1.2","depth":4,"path":"客户端swan-native接入/iOS/简介/小程序依赖三方库.md","ref":"客户端swan-native接入/iOS/简介/小程序依赖三方库.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sequence"],"root":"./source","styles":{"website":"styles/website.css"},"pluginsConfig":{"sequence":{"theme":"simple"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"我的标题","gitbook":"*"},"file":{"path":"客户端swan-native接入/iOS/简介/小程序库大小统计.md","mtime":"2019-03-18T06:06:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-18T06:52:57.905Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

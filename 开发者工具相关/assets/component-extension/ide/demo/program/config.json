@@ -1,0 +1,17 @@
+{
+  "name": "DEMO",
+  "appName": "demo",
+  "domains": ["https://www.demo.com"],
+  "minSwanJsVersion": "3.0.0",
+  "extensions": [
+    {
+      "name": "demo-api",
+      "type": "simulator",
+      "version": "1.0.0"
+    }
+  ],
+  "remote-config": {
+    "name": "../../../remote-config/demo.js",
+    "version": "1.0.0"
+  }
+}
