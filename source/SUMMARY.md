@@ -111,11 +111,11 @@
     * [外部接入方服务端实现建议](server端接入/advices_for_implement.md)
     * [内部接入方接入流程](server端接入/steps_to_register.md)
     * [百度智能小程序开源接入方案功能](server端接入/百度智能小程序开源接入方案.md)
-    * [细节指导](server端接入/细节指导/README.md)
+    * 外部接入方服务端细节指导
         * [oauth实现](server端接入/细节指导/oauth实现.md)
         * [swanid机制说明](server端接入/细节指导/swanid机制说明.md)
         * [宿主服务端接口统计](server端接入/细节指导/宿主服务端接口统计.md)
-        * [授权指导](server端接入/细节指导/授权指导.md)
+        * [授权指导](server端接入/细节指导/授权指导.md)                   
 * [CTS 测试](CTS测试/README.md)
 
 
