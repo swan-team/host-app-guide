@@ -1,46 +1,54 @@
-# 需要接入方实现的服务
-## 一、方案
-
-```sequence
-SWAN->百度小程序SDK: API调用
-百度小程序SDK->宿主APP: 获取网络请求参数
-Note right of 宿主APP: 根据宿主公参等自定义CS协议参数
-宿主APP-->百度小程序SDK: 返回网络协议参数（header,url,postBody）
-Note left of 百度小程序SDK: 向宿主Server发送网络请求
-Note left of 百度小程序SDK: 解析网络请求,校验数据格式
-百度小程序SDK->SWAN: 返回数据
-```
-## 二、接口格式规范
-
-* 请求协议统一通过POST调用。
-* 请求数据格式
-  * Query String:宿主可以自定义
-  * post数据 : 见各接口的接口文档说明
-* 返回数据格式：
-
-```
-
-{         
-
-"errno": "0",         
-"request_id": 123456789,         
-"errmsg": "",         
-"data": {}
-
-}
-
-```
-
->  Errno表示请求是否被正常地处理，调用方应该按以下流程处理：
-
-* [x] 1. 若Errno == 0，表示请求被正常地处理，此时调用方应该继续解析服务端返回的数据用于业务逻辑。
-* [x] 2. 若Errno != 0，表示请求出现异常，调用方应该判断错误码是否为双方预先约定的特定错误码，若是预先约定需要特殊处理的错误码，按处理流程进行。
-* [x] 3. 若Errno != 0，且不是双方预先约定的特定错误码，表示请求无法被服务端正确地处理，此时服务端无法返回正确的业务数据，调用方除了errno和errmsg两个字段外，不应处理其它任何字段。调用方此时应根据具体的业务场景决定给出对应的提示，且为了追查问题方便，若是可视化的错误提示，应尽量地将errno和errmsg放在错误提示中。
-
-## 三、接口文档列表
-* [发票](发票.md)
-* [收货地址](收货地址.md)
-* [授权](授权.md)
-* [登陆](登陆.md)
-
-
+# iOS
+- [简介](简介/README.md)
+  * [名词解释](简介/名词解释.md)
+  * [小程序依赖三方库](简介/小程序依赖三方库.md)
+  * [小程序库大小统计](简介/小程序库大小统计.md)
+  * [小程序开源框架](简介/小程序开源框架.md)
+  * [小程序运行时架构设计](简介/小程序运行时架构设计.md)
+  * [小程序页面栈设计](简介/小程序页面栈设计.md)
+- [接入步骤说明](接入步骤说明/README.md)
+  * [公参接入](接入步骤说明/公参接入.md)
+  * [百度内部接入](接入步骤说明/百度内部接入.md)
+  * [百度外部接入](接入步骤说明/百度外部接入.md)
+  * [端能力扩展](接入步骤说明/端能力扩展.md)
+- [小程序框架提供给宿主的API](小程序框架提供给宿主的API/README.md)
+  * [SWAN Authorize Protocol](小程序框架提供给宿主的API/SWANAuthorizeProtocol.md)
+  * [SWAN Component Touch Util Protocol](小程序框架提供给宿主的API/SWANComponentTouchUtilProtocol.md)
+  * [SWAN Dialog Protocol](小程序框架提供给宿主的API/SWANDialogProtocol.md)
+  * [SWAN Mes View Dialog Protocol](小程序框架提供给宿主的API/SWANMesViewDialogProtocol.md)
+  * [SWAN Service Protocol](小程序框架提供给宿主的API/SWANServiceProtocol.md)
+  * [SWAN Sub Directory Manager Protocol](小程序框架提供给宿主的API/SWANSubDirectoryManagerProtocol.md)
+  * [SWANUI Plugin Util Protocol](小程序框架提供给宿主的API/SWANUIPluginUtilProtocol.md)
+  * [SWAN Utilities Protocol](小程序框架提供给宿主的API/SWANUtilitiesProtocol.md)
+  * [SWAN Web View Navigation Protocol](小程序框架提供给宿主的API/SWANWebViewNavigationProtocol.md)
+  * [打点统计](小程序框架提供给宿主的API/打点统计.md)
+  * [生命周期](小程序框架提供给宿主的API/生命周期.md)
+  * [预加载](小程序框架提供给宿主的API/预加载.md)
+- [需要接入方实现的功能](需要接入方实现的功能/README.md)
+  * [adpater层接口实现说明](需要接入方实现的功能/adpater层接口实现说明.md)
+  * [Config Option](需要接入方实现的功能/ConfigOption.md)
+  * [Form](需要接入方实现的功能/Form.md)
+  * [Platform](需要接入方实现的功能/Platform.md)
+  * [UI](需要接入方实现的功能/UI.md)
+  * [webview生命周期](需要接入方实现的功能/webview生命周期.md)
+  * [二维码扫描](需要接入方实现的功能/二维码扫描.md)
+  * [分享](需要接入方实现的功能/分享.md)
+  * [反馈](需要接入方实现的功能/反馈.md)
+  * [图片](需要接入方实现的功能/图片.md)
+  * [地图](需要接入方实现的功能/地图.md)
+  * [地址、发票](需要接入方实现的功能/地址、发票.md)
+  * [夜间模式](需要接入方实现的功能/夜间模式.md)
+  * [定位](需要接入方实现的功能/定位.md)
+  * [导航](需要接入方实现的功能/导航.md)
+  * [拍照](需要接入方实现的功能/拍照.md)
+  * [授权](需要接入方实现的功能/授权.md)
+  * [支付](需要接入方实现的功能/支付.md)
+  * [直播](需要接入方实现的功能/直播.md)
+  * [视频](需要接入方实现的功能/视频.md)
+  * [端能力回调说明](需要接入方实现的功能/端能力回调说明.md)
+  * [账号](需要接入方实现的功能/账号.md)
+- [需要接入方实现的服务](需要接入方实现的服务/README.md)
+  * [Formid](需要接入方实现的服务/formid.md)
+  * [发票](需要接入方实现的服务/发票.md)
+  * [授权](需要接入方实现的服务/授权.md)
+  * [收货地址](需要接入方实现的服务/收货地址.md)

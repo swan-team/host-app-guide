@@ -1,0 +1,18 @@
+{
+  "name": "demo-api",
+  "version": "1.0.0",
+  "description": "swan demo api",
+  "type": "simulator",
+  "main": "./src",
+  "entry": {
+    "form": {
+      "main": "./src/index.js"
+    },
+    "master": {
+      "main": "./src/webview/master/index.js"
+    },
+    "slave": {
+      "main": "./src/webview/slave/index.js"
+    }
+  }
+}
