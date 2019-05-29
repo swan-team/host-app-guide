@@ -1,0 +1,14 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "demo api",
+  "main": "./src",
+  "entry": {
+    "form": {
+      "main": "./index.js"
+    },
+    "master": {
+      "main": "./master.js"
+    }
+  }
+}

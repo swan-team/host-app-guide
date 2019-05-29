@@ -1,85 +1,22 @@
 
 # 开发者工具宿主接入文档
+##背景
+开发者工具扩展提供宿主在开发者工具内的最小集、端能力的实现，小程序开发者在开发者工具内的宿主环境调试时，是必现要宿主方实现的功能。
 
 ## 快速开始
 
 要实现一个新的APi,需要在开发者工具模拟器扩展中添加一个api的实现,同时在框架的 extensionJs 中添加一个新的api描述。下面简述如何快速添加一个api
 
-- 安装2.0.11以上版本的开发者工具
-- 下载文档内的[demo示例工程](assets/demo.zip)
-- 打开开发者工具, ${hostPath} 是demo示例工程解压后的绝对路径。如 `/user/a/demo`
+- 安装2.2.4以上版本的开发者工具
+- 下载文档内的demo目录代码
+- 复制demo内的extensionJs/1.0.0 到 ~/.swan-cli/vendor/demo-program-extension 目录下
+- 打开开发者工具
     - mac 系统在终端中使用下面的命令,
-    `/Applications/百度开发者工具.app/Contents/MacOS/百度开发者工具 --host ${hostPath} --console`
-    - windows 系统在cmd中使用命令 `%USERPROFILE%\AppData\Local\Programs\swan-ide-gui\百度开发者工具.exe --host ${hostPath} --console` ,
-    也可以使用快捷方式,在后面添加 `--host ${hostPath} --console` 参数来启动工具
-- 打开 `${hostPath}/demo/program/simulator-extensions/demo-api/master.js` 文件,这个是api能力的native实现部分。  <p style="display:none;">~~todo api没有实现schememap,这个还做不了,实现方式待确认。。。~~</p>
-- 修改schemeHandlers部分的代码,添加下面内容 
-    
-        // schemeHandlers 的 key 取值是对应 api scheme 的 action 部分
-        schemeHandlers: {
-            ...handlers,
-            demo: context => async ({query: {params: {data, cb}}}) => {
-                context.utils.execute(cb, 0, 'success', data);
-            }
-        }
-        
-        // todo 单独的最小集参数
-        // middleWares提供对所有native能力的统一前置处理,这里可以方便的处理没实现的最小集
-        middleWares: [
-            context => next => async scheme => {
-                switch (scheme.action) {
-                    case 'chooseInvoiceTitle':
-                    case 'chooseAddress':
-                    case 'requestPolymerPayment':
-                        context.event.send(
-                            'inspector.loggerToConsole',
-                            {
-                                level: 'error',
-                                value: `在demo宿主中,不支持${scheme.action}`
-                            }
-                        );
-                        break;
-                    default:
-                        return next(scheme);
-                }
-            }
-        ],
-        
-- 在 ~/.swan-cli/vendor/demo_extension/1.0.2目录,extension.js中,修改前端框架extensionJs的实现,代码内添加demo:
-
-        
-        // 宿主名称,也是api的命名空间,在此文件内的api会以swan.demo.xxx的方式调用
-        name: 'demo',
-        // hostMethodDescriptions是api的参数描述,name就是上面schemeHandlers中的key字段,也是middleWares里scheme的action
-        hostMethodDescriptions: [{
-            name: 'demo',
-            args: [
-                {name: 'data', value: 'Object='},
-                {name: 'cb', value: 'string'}
-            ]
-        }],
-        // methods是暴露给开发者的方法名,即swan.demo.xxx的xxx部分
-        // methods下的key和schemeHandlers的key不要求一致,比如下面的demo、demo1都会调用action是demo的api实现
-        methods: {
-            demo: function (obj) {
-                // boxjs.demo 这个demo部分对应的就是scheme的action name,也就是hostMethodDescriptions里面的name字段
-                return boxjs.demo({
-                    data: obj.data || {},
-                    cb: createCb(obj)
-                });
-            },
-            demo1: function (obj) {
-                return boxjs.demo({
-                    data: obj.data || {},
-                    cb: createCb(obj)
-                });
-            }
-        }
-    
-
-- 打开一个小程序工程,点击工具栏切换宿主按钮,切换到 demo 宿主
-- 重新打开工程,等待编译完成后,在调试器 console 中输入`swan.demo.demo({data:{test: 1},success:console.log})`,可以看到输出了api中返回的内容。
-
+    `/Applications/百度开发者工具.app/Contents/MacOS/百度开发者工具 --host --console`
+    - windows 系统在cmd中使用命令 `%USERPROFILE%\AppData\Local\Programs\swan-ide-gui\百度开发者工具.exe --host --console` ,
+    也可以使用快捷方式,在后面添加 `--host --console` 参数来启动工具
+- 打开一个小程序工程，在工具栏中打开宿主配置管理中心，选择加载本地宿主，打开demo/ide/demo目录，关闭宿主配置管理中心，切换成示例APP宿主
+- 等待编译完成后,在调试器 console 中输入`swan.demo.demo({data:{test: 1},success:console.log})`,可以看到输出了api中返回的内容。
 
 
 
@@ -89,8 +26,9 @@
    - [如何开发和调试](开发和调试.md)
    - [如何增加宿主配置](增加宿主配置.md)
    - [如何开发模拟器扩展](开发模拟器扩展.md)
+     - [开发一个api扩展](api扩展.md)
      - [开发一个组件扩展](组件扩展.md)
-   - [使用demo-api](demo-api.md)
+   - [使用demo](demo.md)
  
 
 

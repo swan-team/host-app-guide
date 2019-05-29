@@ -1,0 +1,16 @@
+{
+  "name": "webview",
+  "version": "1.0.0",
+  "description": "swan demo webview",
+  "type": "simulator",
+  "main": "./src",
+  "entry": {
+    "form": {
+      "main": "./src/index.js",
+      "styles": ["./src/wv.css"]
+    },
+    "master": {
+      "main": "./src/master.js"
+    }
+  }
+}

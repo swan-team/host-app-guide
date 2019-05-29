@@ -1,0 +1,11 @@
+{
+  "name": "demo",
+  "appName": "示例APP",
+  "version": "1.0.0",
+  "minSwanNativeVersion": "2.0.0",
+  "maxSwanNativeVersion": "2.9.9",
+  "main": "config.js",
+  "dependencies": {
+
+  }
+}

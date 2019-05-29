@@ -26,9 +26,27 @@ define('swan-extension', ['swan', 'boxjs'], function (require, module, exports, 
         };
     };
 
+    var id = 0;
+    var createCb = function (obj) {
+        let callbackName = `_demo_cb_` + id;
+        window[callbackName] = function (args) {
+            let ret = JSON.parse(args);
+            if (+ret.status === 0) {
+                obj.success && obj.success(ret.data);
+            }
+            else {
+                obj.fail && obj.fail(ret.data);
+            }
+            obj.complete && obj.complete(ret.data);
+        };
+        return callbackName;
+    };
+
     module.exports = {
         name: 'demo',
         hostMethodDescriptions: [
+            {name: 'demo', args: [{name: 'data', value: 'Object='}, {name: 'cb', value: 'string'}]},
+            {name: 'wv', args: []},
             {name: 'openDemoVideo', args: [{name: 'data', value: 'Object='}]},
             {name: 'playDemoVideo', args: [{name: 'data', value: 'Object='}]},
             {name: 'pauseDemoVideo', args: [{name: 'data', value: 'Object='}]},
@@ -50,6 +68,15 @@ define('swan-extension', ['swan', 'boxjs'], function (require, module, exports, 
             }
         },
         methods: {
+            demo(obj) {
+                return boxjs.demo({
+                    data: obj.data || {},
+                    cb: createCb(obj)
+                });
+            },
+            wv(obj) {
+                return boxjs.wv();
+            },
             createVideoContext: vid =>
                 ((id => ({
                     play: () => boxjs.playDemoVideo({data: {id}}),

@@ -1,7 +1,7 @@
 {
-  "name": "demo-api",
+  "name": "component",
   "version": "1.0.0",
-  "description": "swan demo api",
+  "description": "swan demo component",
   "type": "simulator",
   "main": "./src",
   "entry": {

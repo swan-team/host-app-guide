@@ -1,0 +1,20 @@
+{
+    "name": "authorize-login-api",
+    "version": "1.0.0",
+    "description": "mock authorize login api",
+    "publisher": "sunzhengxin",
+    "type": "ui",
+    "main": "./src",
+    "entry": {
+      "form": {
+        "main": "./src/index.js",
+        "styles": []
+      },
+      "master": {
+        "main": "./src/webview/master/index.js"
+      },
+      "slave": {
+        "main": "./src/webview/slave/index.js"
+      }
+    }
+  }

@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>login</title>
+    </head>
+    <body>
+        <button id="loginhost">success click</button>
+        <script>
+            console.log(document.getElementById('loginhost'));
+            document.getElementById('loginhost').onclick = function() {
+                console.log('click host login');
+                window.sendRenderSuc && window.sendRenderSuc();
+            }
+        </script>
+    </body>
+</html>
