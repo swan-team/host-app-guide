@@ -30,17 +30,13 @@ BBASMPlatformAdapterProtocol
 
 @required
 
-* 公参接口，后期废弃;百度系宿主需要返回自己的公参，非百度系宿主直接返回百度的公参
+* 请求接口
 
 ```
-/// 公参接口 (后期废弃)
+/// 公参接口 (后期废弃)；百度系宿主需要返回自己的公参，非百度系宿主直接返回百度的公参
 + (NSString *)composeParameters;
 
-```
-* 服务端接口，后期废弃;返回百度的根服务器地址
-
-```
-/// 服务端接口 (后期废弃)
+/// 服务端接口 (后期废弃)；返回百度的根服务器地址
 + (NSString *)rootServerHost;
 ```
 
@@ -58,22 +54,27 @@ BBASMPlatformAdapterProtocol
  */
 + (NSDictionary *)hostConfig;
 
-/// 用户字体大小设置
+/// 用户字体大小设置，全局字体四级level（小：1|中：2|大：3|特大：4），默认中级(2)
 + (NSString *)globalFontSizeLevel;
 
-/// mtj的唯一标识
+/// private：mtj的唯一标识，百度系的产品，需要设置MTJ的cuid；
 + (NSString *)mtjCUID;
 
-/// 获取设备唯一标识，pms请求服务必传
+/// 获取设备唯一标识，请使用宿主自己的设备id；（注：百度系的产品使用统一cuid库）
 + (NSString *)getDeviceIdentity;
 
 /**
- * @brief 当前网络状态；
+ * @brief 当前网络状态；(后期废弃)
  *
  * @return NSString，value：Unknown（默认）、WiFi、2G、3G、4G
  */
 + (NSString *)currentNetworkTypeString;
 
+```
+
+* 宿主extension接口
+
+```
 /**
  * @brief 指定宿主对extension版本号的支持规则
  *
@@ -82,23 +83,33 @@ BBASMPlatformAdapterProtocol
 + (NSString *)extensionRule;
 
 /**
+ * @brief 获取预置extension包文件的完整路径，要求文件格式是zip
+ * @return 返回预置extension包的完整路径
+ */
++ (NSString *)presetExtensionPackageBundlePath;
+
+/**
+ * @brief 获取预置extension包版本号
+ * @return 返回预置extension包版本号
+ */
++ (NSString *)presetExtensionPackageVersion;
+
+```
+
+* 端能力描述接口 [端能力描述表zip生成](../接入步骤说明/端能力描述生成.md)
+
+```
+/**
  * @brief 获取端能力描述表需要存放的完整路径
  * @return 返回端能力描述表存放的完整路径
  */
 + (NSString *)pluginDescriptionPath;
+
 ```
 
 @optional
 
-```
-/**
- * @brief PMS模块在宿主方是否使用手百默认域名(该方法仅在手百使用, 宿主方不必实现)
- *
- * @return YES: 使用默认Host NO: 使用其他Host
- */
-+ (BOOL)shouldPMSUseDefaultServerHost;
 
-```
 * 自定义UA - 配置参考1.4备注
   
 ```
