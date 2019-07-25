@@ -1,18 +1,18 @@
 <!-- TOC -->
 
-- [1. Platform](#1-platform)
-    - [1.1. 文档版本](#11-文档版本)
-    - [1.2. 功能说明](#12-功能说明)
-    - [1.3. 开发指南](#13-开发指南)
-        - [1.3.1. 协议](#131-协议)
-        - [1.3.2. 接口列表](#132-接口列表)
-        - [1.3.3. 示例](#133-示例)
+- [1. Platform](#1)
+    - [1.1. 文档版本](#11)
+    - [1.2. 功能说明](#12)
+    - [1.3. 开发指南](#13)
+        - [1.3.1. 协议](#131)
+        - [1.3.2. 接口列表](#132)
+        - [1.3.3. 示例](#133)
     - [1.4. 备注](#14-备注)
 
 <!-- /TOC -->
 
-# 1. Platform
-## 1.1. 文档版本
+# <span id="1"> 1. Platform
+## <span id="11"> 1.1. 文档版本
 
 |文档版本|修改日期|修改概述|
 |:--|:--|:--|
@@ -20,13 +20,15 @@
 |2.7.0|2019-06-12|adapter协议优化|
 
 --------------------------
-## 1.2. 功能说明
-配置小程序框架运行环境的参数
-## 1.3. 开发指南
-### 1.3.1. 协议
-BBASMPlatformAdapterProtocol
-### 1.3.2 接口列表
+## <span id="12"> 1.2. 功能说明
+配置小程序框架运行环境的参数、Extension、UA、小程序&小游戏生命周期、端能力描述。
 
+## <span id="13"> 1.3. 开发指南
+
+### <span id="131"> 1.3.1. 协议
+BBASMPlatformAdapterProtocol
+
+### <span id="132"> 1.3.2 接口列表
 
 @required
 
@@ -54,13 +56,25 @@ BBASMPlatformAdapterProtocol
  */
 + (NSDictionary *)hostConfig;
 
-/// 用户字体大小设置，全局字体四级level（小：1|中：2|大：3|特大：4），默认中级(2)
+/**
+ * @brief 用户字体大小；全局字体四级level（小：1|中：2|大：3|特大：4），默认中级(2)
+ *
+ * @return NSString，用户设置的字体大小
+ */
 + (NSString *)globalFontSizeLevel;
 
-/// private：mtj的唯一标识，百度系的产品，需要设置MTJ的cuid；
+/**
+ * @brief mtj的唯一标识，百度系的产品，需要设置MTJ的cuid；（注：开源联盟成员使用百度mtj库可以调用mtj的cuid方法） 
+ *
+ * @return NSString，mtj的唯一标识
+ */
 + (NSString *)mtjCUID;
 
-/// 获取设备唯一标识，请使用宿主自己的设备id；（注：百度系的产品使用统一cuid库）
+/**
+ * @brief 设备唯一标识，请使用宿主自己的设备id；（注：百度系的产品使用统一cuid库） 
+ *
+ * @return NSString，设备唯一标识
+ */
 + (NSString *)getDeviceIdentity;
 
 /**
@@ -110,7 +124,7 @@ BBASMPlatformAdapterProtocol
 @optional
 
 
-* 自定义UA - 配置参考1.4备注
+* 自定义UA - 配置参考1.4备注；
   
 ```
 /**
@@ -120,9 +134,6 @@ BBASMPlatformAdapterProtocol
  */
 + (NSString *)commonUserAgent;
 
-```
-
-```
 /**
  * @brief webView UA navigator.userAgent
  *
@@ -130,23 +141,11 @@ BBASMPlatformAdapterProtocol
  */
 + (NSString *)webViewUserAgent;
 
-/**
- * @brief 获取预置extension包文件的完整路径，要求文件格式是zip
- * @return 返回预置extension包的完整路径
- */
-+ (NSString *)presetExtensionPackageBundlePath;
+```
 
-/**
- * @brief 获取预置extension包版本号
- * @return 返回预置extension包版本号
- */
-+ (NSString *)presetExtensionPackageVersion;
+* 小程序&小游戏生命周期；
 
-/**
- * @brief 获取预置小程序/小游戏包的完整文件夹路径
- * @return 返回预置小程序/小游戏包的完整文件夹路径
- */
-+ (NSString *)presetSmartAppRootPath;
+```
 
 #pragma mark - life cycle (小程序&小游戏生命周期)
 
@@ -178,18 +177,12 @@ BBASMPlatformAdapterProtocol
  */
 + (void)onLifeCycleFailed:(NSError *)error handler:(void (^)(BOOL shouldUseSwanErrorUI))handler;
 
-/**
- * @brief private:仅手百可用；构造屏蔽小程序的校验码
- * @param appKey 小程序&小游戏的appKey
- */
-+ (NSString *)createExternalCheckCodeByAppKey:(NSString *)appKey;
-
 ```
 
-### 1.3.3 示例
+### <span id="133"> 1.3.3 示例
 参考：BBASMPlatformImplement
 
-## 1.4. 备注
+## <span id="14"> 1.4. 备注
 
 <font color="#FF0000">**重要提示-微信H5支付**</font>
    
