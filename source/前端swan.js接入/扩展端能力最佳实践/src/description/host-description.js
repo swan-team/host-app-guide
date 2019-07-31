@@ -20,7 +20,7 @@ export const hostSyncDescriptions = [
         'authority': 'host',
         'path': '/hostExampleSync',
         'args': [
-            {name: 'test', valeu: 'string'},
+            {name: 'test', value: 'string'},
             {name: 'extension', value: 'string='}
         ]
     }
@@ -32,7 +32,7 @@ export const hostAsyncDescriptions = [
         'authority': 'host',
         'path': '/hostDescriptionExample',
         'args': [
-            {name: 'test', valeu: 'string'},
+            {name: 'test', value: 'string'},
             {name: 'extension', value: 'string='}
         ]
     }

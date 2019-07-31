@@ -22,7 +22,7 @@ export const baiduPrivateSyncDescriptions = [
         'authority': 'swanAPI',
         'path': '/privateDescriptionExampleSync',
         'args': [
-            // name为传参名称， value为传参类型； '='表示该参数为必填，此配置在swanjs运行时底层会进行参数类型和是否必填的强校验
+            // name为传参名称， value为传参类型； '='表示该参数为非必填，此配置在swanjs运行时底层会进行参数类型和是否必填的强校验
             {name: 'test', valeu: 'string'},
             {name: 'extension', value: 'string='}
         ]
@@ -36,7 +36,7 @@ export const baiduPrivateAsyncDescriptions = [
         'authority': 'swanAPI',
         'path': '/privateDescriptionExample',
         'args': [
-            // name为传参名称， value为传参类型； '='表示该参数为必填，此配置在swanjs运行时底层会进行参数类型和是否必填的强校验
+            // name为传参名称， value为传参类型； '='表示该参数为非必填，此配置在swanjs运行时底层会进行参数类型和是否必填的强校验
             {name: 'test', value: 'string'},
             {name: 'extension', value: 'string='}
         ],

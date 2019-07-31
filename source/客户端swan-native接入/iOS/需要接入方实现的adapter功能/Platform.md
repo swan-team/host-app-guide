@@ -18,6 +18,7 @@
 |:--|:--|:--|
 |0.8|2018-12-10|初始版本|
 |2.7.0|2019-06-12|adapter协议优化|
+|2.9.0|2019-07-30|adapter协议优化|
 
 --------------------------
 ## <span id="12"> 1.2. 功能说明
@@ -31,16 +32,6 @@ BBASMPlatformAdapterProtocol
 ### <span id="132"> 1.3.2 接口列表
 
 @required
-
-* 请求接口
-
-```
-/// 公参接口 (后期废弃)；百度系宿主需要返回自己的公参，非百度系宿主直接返回百度的公参
-+ (NSString *)composeParameters;
-
-/// 服务端接口 (后期废弃)；返回百度的根服务器地址
-+ (NSString *)rootServerHost;
-```
 
 * 宿主方的配置信息
 
@@ -64,25 +55,11 @@ BBASMPlatformAdapterProtocol
 + (NSString *)globalFontSizeLevel;
 
 /**
- * @brief mtj的唯一标识，百度系的产品，需要设置MTJ的cuid；（注：开源联盟成员使用百度mtj库可以调用mtj的cuid方法） 
- *
- * @return NSString，mtj的唯一标识
- */
-+ (NSString *)mtjCUID;
-
-/**
  * @brief 设备唯一标识，请使用宿主自己的设备id；（注：百度系的产品使用统一cuid库） 
  *
  * @return NSString，设备唯一标识
  */
 + (NSString *)getDeviceIdentity;
-
-/**
- * @brief 当前网络状态；(后期废弃)
- *
- * @return NSString，value：Unknown（默认）、WiFi、2G、3G、4G
- */
-+ (NSString *)currentNetworkTypeString;
 
 ```
 
@@ -95,33 +72,20 @@ BBASMPlatformAdapterProtocol
  * @return NSString，extensino版本号的支持规则
  */
 + (NSString *)extensionRule;
-
-/**
- * @brief 获取预置extension包文件的完整路径，要求文件格式是zip
- * @return 返回预置extension包的完整路径
- */
-+ (NSString *)presetExtensionPackageBundlePath;
-
-/**
- * @brief 获取预置extension包版本号
- * @return 返回预置extension包版本号
- */
-+ (NSString *)presetExtensionPackageVersion;
-
-```
-
-* 端能力描述接口 [端能力描述表zip生成](../接入步骤说明/端能力描述生成.md)
-
-```
-/**
- * @brief 获取端能力描述表需要存放的完整路径
- * @return 返回端能力描述表存放的完整路径
- */
-+ (NSString *)pluginDescriptionPath;
-
 ```
 
 @optional
+
+* mtj 唯一标识
+
+```
+/**
+ * @brief mtj的唯一标识，百度系的产品，需要设置MTJ的cuid；（注：开源联盟成员使用百度mtj库可以调用mtj的cuid方法） 
+ *
+ * @return NSString，mtj的唯一标识
+ */
++ (NSString *)mtjCUID;
+```
 
 
 * 自定义UA - 配置参考1.4备注；
@@ -140,6 +104,23 @@ BBASMPlatformAdapterProtocol
  * @return NSString，webView UA
  */
 + (NSString *)webViewUserAgent;
+
+```
+
+* 宿主extension接口
+
+```
+/**
+ * @brief 获取预置extension包文件的完整路径，要求文件格式是zip
+ * @return 返回预置extension包的完整路径
+ */
++ (NSString *)presetExtensionPackageBundlePath;
+
+/**
+ * @brief 获取预置extension包版本号
+ * @return 返回预置extension包版本号
+ */
++ (NSString *)presetExtensionPackageVersion;
 
 ```
 
@@ -170,12 +151,12 @@ BBASMPlatformAdapterProtocol
 + (void)onLifeCycleBackground:(NSString *)appKey;
 
 /**
- * @brief 当前小程序&小游戏加载失败
+ * @brief 当前小程序&小游戏加载失败时，是否使用小程序默认错误页面
  *
  * @param error 失败信息
- * @param handler 宿主方回调决定是否使用小程序默认错误页面. 如果不回调, 默认为YES
+ * @return 宿主方回调决定是否使用小程序默认错误页面,如果不使用(宿主自己定制错误页)，返回YES;如果使用，返回NO，或者不实现该方法
  */
-+ (void)onLifeCycleFailed:(NSError *)error handler:(void (^)(BOOL shouldUseSwanErrorUI))handler;
++ (BOOL)onLifeCycleFailed:(NSError *)error;
 
 ```
 
