@@ -33,13 +33,21 @@
 |local-maven|搭建的本地maven仓库，用于存放gralde插件**后续放到中央仓库**。|
 
 
-# lib-video子库说明（使用其一即可）
+# lib-video参考实现 子库说明（使用其一即可）
 |Lib 名词|解释|
 |--|--|
 |lib-bd-videoplayer|百度云播放器实现的video组件，播放性能比系统的mediaPlayer好，但是体积大|
 |lib-sys-videoplayer|使用系统mediaPalyer实现的video组件，播放性能没有专业视频播放好，但是体积小|
 
 注：宿主可以选择实现自己的视频播放器，以上两种都不用；也可以根据考虑选用以上提供的一种。
+
+# lib-map参考实现 子库说明（使用其一即可）
+|Lib 名词|解释|
+|--|--|
+|lib-bd-map-full|实现了定位和地图组件，使用的百度定位和地图，体积较大|
+|lib-bd-map-only-location|仅实现了定位能力，没有地图组件（用到地图组件的小程序无法正常显示）|
+注：宿主可以使用自己的定位和地图去实现，以上两种都不用；也可以根据考虑选用以上提供的一种。lib中的地图和定位sdk均来自百度地图官网，无任何定制，宿主可根据需要升级。
+
 
 # lib-swan-webview 子库说明（将t7内核和需要的so到这个库里）
 |Lib 名词|解释|
@@ -50,3 +58,8 @@
 |lib-swan-sailor-so|v8引擎和T7内核使用的所有so的集合，***支持同层渲染***|
 |lib-swan-sailor-so-lite|v8引擎的so，***没有T7内核***，可正常运行小程序和小游戏的最小so集合，不支持同层渲染，同层渲染自动降级为普通的H5元素，主要是处于体积考虑，和lib-swan-sailor-so根据业务需要二选一|
 |lib-swan-webcore|lib-swan-sailor的依赖库|
+
+# T7内核、V8引擎支持SO后下载
+- 如果采用so后下载的机制，lib-swan-sailor-so 和 lib-swan-sailor-so-lite 都不需要依赖。
+- 将lib-swan-sailor-so（只能使用这个里的so，不可使用lite中的）中的所有so打包成zip进行后下载。
+- 详细的so后下载说明和代码参考 so后下载的文档。
